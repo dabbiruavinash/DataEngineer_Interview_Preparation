@@ -1,0 +1,214 @@
+GLUE
+1.what is roles of glue in aws? 
+2.how to use glue in real time project in aws?
+3.how frequenlty you run glue in aws?
+4.whart id glue schema registry in aws?
+5.what is glue catalog?
+6.what is vtc?
+7.vtc in aws?
+8.what is vpc?
+9.private and public subnet
+10.if i have one private postresql and i used glue job in it for allows to public subnet , how can i do it.
+11.how to use glue job to write postgres db un aws in private network. 
+12.what is glue connection
+31.if i have s3 bucket. i dont have direct access. i want glue job to allow. how to do it?
+33.write a airflow job to run glue job and then lambda function and then epython code
+9.Glue Data Transfer RDS Redshift
+10.AWS Glue vs Orchestration
+11.AWS Glue Technical Features
+7.ETL Pipeline Glue Redshift
+9.Glue Data Transfer RDS Redshift
+10.AWS Glue vs Orchestration
+11.AWS Glue Technical Features
+
+
+
+LAMBDA
+8.how to solve problem of Lambda SMS Notification Process
+24.what is lambda function
+25.what is lambda function in aws
+28.tell me main component of aws lambda.
+29.tell me types of trigger in labda function aws
+16.what is lambda limitiation in amazon
+17.if you are doing more than 15 min taking time for a task.. what service we use in aws apart from lambda
+
+DBT
+20.how to use DBT in aws cloud.?
+21.how to check dbt model to check null values
+22.incremental model in dbt
+23.roles and responsibility in dbt
+24.how u use dbt to load data from source to target
+25.large data structure and algorithm ?
+1, how to use dbt in real time pipeline?
+2.what are the seeds in dbt?
+3. what is folder structure follwing in dbt in project?
+
+
+
+26.if i work in hospital,iot device reading temperature data give me   every 5 sec data is read from sensor. as a engineer you need to write data in s3 bucket . how to create pipeline,describe me in detail?
+27.how to write data from kafka to s3 bucket from kafka
+
+
+30.what is aws cloud watch
+12.how u moniter spark job in aws
+
+
+
+SNOWFLAKE
+34.i have snowflake database. i have a table in it.   in snowflake how can i get table schema
+35.ddl function snowflak
+
+32.can we restrict s3 bucket oni have snowflake database. i have a table in it.   in snowflake how can i get table schemly for particular network. how to do it
+36.what is time travelling in snowflake
+37.if i add 10 data in one table 35 days, i got 3650 data after one year,if i have to check this back of any date of data ,how can i do that ?
+38.how to using time travel how to see snowflake data 
+39.how to check max time travel in snowflake?
+40.what is roles in snowflake
+41.diff between account role and roles
+
+
+
+
+1.HOW TO LAUNCH DATA ENGINEERING PORTAL USING AWS
+2.Create Dashboard in Snowflake
+3.Prevent DDoS in AWS
+4.ETL Pipeline AWS Services
+5.AWS Data Tools Overview
+6.aws Lambda DynamoDB Integration
+13.when we didwork with pyspark so which service we use in aws
+14.what is in python orcestration why we use
+15.tell me depth about ecs in aws cloud?
+18.spectrom in aws ec2
+19.tell me step one csv file. how to import in red shift
+
+
+
+
+
+
+
+
+
+
+
+
+PYTHON
+
+Reading one text file and printing the 
+words that starting with capital letters alone
+words that starting with capital letters alone
+what is self in python
+what is init in python
+list vs tuple
+dictornary
+what is pip
+how to use a function which is in file 1 in file 2?
+how to remove header and trailer in a file?
+how to identify specific letter in a file and get it?
+how to identify null values in a file?
+Import function in Python
+tell me real time scenario of Implement Currency Converter
+write a code Removing List Duplicates
+write a code Find Length Of Even String
+write a code Tuple Value Calculations
+write a code Queue Implementation in Python
+write a code Find Common List Elements
+write a code Removing List Duplicates
+write a code Find Length Of Even String
+write a code Print  Numbers Excluding Range
+write a code Print Even Numbers Python
+write a code Sum Values Tuple Python
+write a code Appending Lists in Python
+write a code Print Even Numbers
+write a code Sum Values Tuple
+python scripting used for  in data engg>
+
+
+
+PYSPARK
+
+13.how to pass jdbc connection in pyspark ?
+14.total join in pyspark core
+15.narrow and wide join in pyspark?
+what is hash partitioner in pyspark? explain it with example?
+12 Define narrow transformation and wide transformation in pypyspark.
+1. how to convert wide join into narrow join in pyspark . explain with example?
+17.what is broadcast join in pyspark?
+18.how to handle broadcast join in pyspark?
+NA:- .if i have one table in data ,and i used boradcast in it,example of broadcast join with proper coding syntax?
+NA - if ione table have 100 record. another table have 20 million recrd. i want to do join with broadcast join code? tell me step vice process?
+22.if i did work with pyspark context,and it takes a more time in it how can i optimie duration in 5 second,tell me all steppyspark job is taking long time to run. how you will optimize it?
+how to combine smaller files in pyspark to optimize it?
+what is slating n pyspark. give with example?
+what is vectorized in panda udf?
+23.how to identify why pyspark is taking long time to run in azure and aws and gcp?
+1. What is partition and bucketing, how to decide which one to use ?
+2. How to decide number of buckets ? -- 4034/128 -- 2n > 18 -- 32
+9)what is  distributed cache in pyspark. explain practically?
+10)mapside join
+10)difference between broadcast variable and broadcast join in pyspark? explain with example ..........
+12) pyspark shared variables - broadcast and accumulator
+2) Version of pyspark, ide & build tool's used in project
+5) difference between broadcast and cache in pyspark. explain with realtime example?
+6) what is executor and driver in pyspark
+7)  how to read multiple files  and multiple tables parallellely using pyspark?
+14) pyspark optimization techniques
+15. Diff between cache and persist of rdd. explain with example?
+
+15) on what basis, we will increase executors and cores.
+6) how to decide the number of cores and executors
+9) what's the use of pyspark context
+A pysparkContext represents the connection to a pyspark cluster, and can be used to create RDDs, accumulators and broadcast variables on that cluster.
+15) once job is submitted, if it's failed with lack of resources... then how pyspark get to know about resources
+17) what is d-stream in pyspark
+18) how to combine small files in pyspark and red it.
+24) how to read file from csv and write back to json in pyspark
+25) how to create df in pyspark
+4) Write a query to read the data from Teradata to pyspark
+pyspark Lineage vs DAG  AND pyspark DAG and RDD lineage
+7) diff bw mapreduce processing and pyspark processing
+8) Catalyst optimisation (how catalyst optimization help iwth sql queries in sparkSQL)
+12) pyspark shared variables - broadcast and accumulator
+4) how to copy 10 small files into single files
+3. advantages of pyspark over hadoop
+Ans: Fast data processing (In-Memory); Iterative processing; Near real time processing; Graph processing; Machine Learning;  
+4. What is lazy evaluation ?
+6. DAG vs Lineage graph
+7. cluster by, sort by, order by, distribute by
+5. how to set max number of vcores  /// pyspark.cores.max
+14. map vs flatmap
+4. why rdd is slower than df ?
+5. what is the catalyst optimiser? (I said donno)
+6. how does pyspark execute in the backend after pyspark-submit command?
+7. I have two large tables and I want to join what are the pyspark optimization techiniques you will use ? (I said broadcast join)
+8. Suppose say one table is of 50MB and another table is having some millions of records.. which one to broadcast and is there any limit 
+for broadcast memory and if so how to increase it ? (10mb is the limit and I donno this)
+9. suppose say I have a code of 10 lines.. 1st line is loading the file.. 8 lines of transformations and last line of action..
+ so tell me how many stages will create just by seeing the code ?
+10. 10. what will happen in the backend during infer schema?
+11. which is better a) infer schema or b) manually giving schema
+13. will pyspark tries to create as many stages as possible or as less stages as possible ?
+14. how does broadcast join works?
+5. will sc.textFile creates any stages? 
+16. Suppose say we have taken you into our project and gave u a laptop of 8gb ram and there is a CSV file of 1GB.. where does it will open ?
+17. So now tell me will sc.textFile creates any stage or not
+18. so how many stages were created for those 10 lines of code..(I said it will create 8 stages :| )
+9.Fixing SyntaxError f-string
+10.how to Handling Large pyspark Datasets
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

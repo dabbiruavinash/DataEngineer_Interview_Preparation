@@ -1,0 +1,119 @@
+ Azure Storage interview questions**, covering **Azure Storage Accounts, Cosmos DB, Blob Storage, Table Storage, Queue Storage, and File Storage**. These questions are commonly asked in **MNCs like TCS, Deloitte, Capgemini, Microsoft, Tiger Analytics, PwC, and others**.  
+
+---
+
+## **1. Azure Storage Account Interview Questions**  
+1. What is an **Azure Storage Account**, and what are its different types?  
+2. What is the difference between **Standard and Premium Storage Accounts**?  
+3. What is **RA-GRS (Read-Access Geo-Redundant Storage)**, and how does it work?  
+4. What are the different **replication strategies** available in Azure Storage?  
+5. What is the difference between **LRS, GRS, ZRS, and RA-GRS**?  
+6. How does **Soft Delete for Azure Storage work**?  
+7. What is the **Azure Storage firewall**, and how does it enhance security?  
+8. How do you monitor **Azure Storage performance and logs**?  
+9. How do you **secure data at rest and in transit in Azure Storage**?  
+10. How do you implement **lifecycle management in Azure Storage**?  
+
+---
+
+## **2. Azure Blob Storage Interview Questions**  
+11. What is **Azure Blob Storage**, and what are its key use cases?  
+12. What are the different **Blob Storage access tiers (Hot, Cool, and Archive)**?  
+13. How do you configure **Azure Blob Storage lifecycle policies**?  
+14. What is an **Azure Blob Container**, and how is it different from a Blob?  
+15. How do you manage **Blob versioning** in Azure Storage?  
+16. What is the difference between **Append Blob, Page Blob, and Block Blob**?  
+17. How do you enable **CORS (Cross-Origin Resource Sharing) for Blob Storage**?  
+18. How can you use **SAS (Shared Access Signature) tokens for secure access**?  
+19. How do you configure **Blob Encryption using customer-managed keys**?  
+20. How do you **upload large files efficiently** to Azure Blob Storage?  
+
+---
+
+## **3. Azure Table Storage Interview Questions**  
+21. What is **Azure Table Storage**, and how does it differ from Cosmos DB?  
+22. What is the difference between **Partition Key and Row Key** in Table Storage?  
+23. How do you **query data efficiently in Azure Table Storage**?  
+24. How does **Azure Table Storage handle scalability and performance**?  
+25. What are the **limitations of Azure Table Storage** compared to Cosmos DB?  
+26. How does **Azure Table Storage handle transactions**?  
+27. How do you implement **indexing in Azure Table Storage**?  
+28. How do you **migrate data from Table Storage to Cosmos DB**?  
+29. What are the **cost considerations** for Azure Table Storage?  
+30. How does **data replication work in Azure Table Storage**?  
+
+---
+
+## **4. Azure Queue Storage Interview Questions**  
+31. What is **Azure Queue Storage**, and how does it work?  
+32. How is **Azure Queue Storage different from Service Bus Queues**?  
+33. What is the **maximum message size** allowed in Azure Queue Storage?  
+34. How do you ensure **message durability in Azure Queue Storage**?  
+35. How do you configure **Queue TTL (Time-to-Live) in Azure Storage**?  
+36. What happens if a **message is not processed in a queue within the TTL**?  
+37. How do you implement **dead-letter queues in Azure Queue Storage**?  
+38. How do you **increase throughput and scalability** in Azure Queue Storage?  
+39. How do you implement **Poison Message Handling in Azure Queue Storage**?  
+40. What are the **security mechanisms available for Azure Queue Storage**?  
+
+---
+
+## **5. Azure File Storage Interview Questions**  
+41. What is **Azure File Storage**, and how does it differ from Blob Storage?  
+42. How does **Azure File Sync work**, and what are its use cases?  
+43. What are the **different performance tiers** in Azure File Storage?  
+44. How do you mount an **Azure File Share** on Windows/Linux machines?  
+45. How do you configure **NTFS and SMB permissions in Azure File Storage**?  
+46. What are the **security risks associated with Azure File Storage**?  
+47. How do you backup and restore **Azure File Shares**?  
+48. How do you ensure **high availability and disaster recovery** for File Storage?  
+49. What are the **limitations of Azure File Storage compared to other options**?  
+50. How do you migrate **on-premises file shares to Azure File Storage**?  
+
+---
+
+## **6. Azure Cosmos DB Interview Questions**  
+### **Basic Questions**  
+51. What is **Azure Cosmos DB**, and why is it called a globally distributed database?  
+52. What are the **different APIs available in Cosmos DB (SQL, MongoDB, Cassandra, etc.)**?  
+53. What is **multi-model support in Cosmos DB**?  
+54. How does **Cosmos DB handle automatic partitioning**?  
+55. What is **RU/s (Request Units per second)**, and how does it impact performance?  
+
+### **Advanced & Real-World Scenario-Based Questions**  
+#### **Scenario 1: E-Commerce Application Scaling**  
+**Question:** An e-commerce application is experiencing high traffic, and the database performance is degrading. How would you **scale Azure Cosmos DB to handle millions of concurrent transactions**?  
+
+#### **Scenario 2: Global Distribution**  
+**Question:** A company operates in multiple regions and needs **low-latency access to data globally**. How does **Cosmos DB ensure consistency and availability across multiple geographies**?  
+
+#### **Scenario 3: Data Consistency Models**  
+**Question:** Your application requires **strong consistency for financial transactions** but also needs **eventual consistency for product catalogs**. How would you configure **Cosmos DB’s consistency levels**?  
+
+#### **Scenario 4: Cost Optimization**  
+**Question:** You need to optimize **Cosmos DB costs while maintaining high availability**. What are the best strategies for **reducing RU consumption**?  
+
+### **More Advanced Cosmos DB Questions**  
+56. What is the difference between **Provisioned Throughput and Serverless Mode**?  
+57. How does **Cosmos DB handle indexing automatically**?  
+58. What is **Time to Live (TTL)**, and how does it work in Cosmos DB?  
+59. How do you **monitor and troubleshoot performance issues in Cosmos DB**?  
+60. How does **Azure Cosmos DB support event-driven architectures with Change Feed**?  
+
+---
+
+## **7. Azure Storage + Other Services (Real-World Integration Questions)**  
+61. How does **Azure Storage integrate with Azure Data Factory (ADF) for ETL processes**?  
+62. What are the key differences between **Azure Data Lake Storage and Azure Blob Storage**?  
+63. How can **Azure Logic Apps interact with Blob Storage for automation**?  
+64. How does **Azure Storage interact with Azure Synapse Analytics for big data processing**?  
+65. How do you use **Azure Functions to trigger actions based on Blob Storage events**?  
+66. How does **Azure Storage integrate with Power BI for real-time reporting**?  
+67. What are the best practices for **securing data across Azure Storage services**?  
+68. How does **Azure Storage work with Azure Machine Learning for data ingestion**?  
+69. What are the considerations for **data migration from AWS S3 to Azure Blob Storage**?  
+70. How do you design a **multi-region high-availability architecture using Azure Storage**?  
+
+---
+
+T

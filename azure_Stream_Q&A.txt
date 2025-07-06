@@ -1,0 +1,67 @@
+Here is a **comprehensive list of Azure Stream Analytics (ASA) interview questions** commonly asked by **MNCs like TCS, Capgemini, Deloitte, Microsoft, Tiger Analytics, and others**. The questions cover **basic, intermediate, and real-world scenario-based topics**.
+
+---
+
+### **1. Basic Azure Stream Analytics Interview Questions**
+1. What is **Azure Stream Analytics (ASA)**, and how does it work?  
+2. What are the key **components of Azure Stream Analytics**?  
+3. How does **ASA differ from traditional batch processing**?  
+4. What data sources are supported by **Azure Stream Analytics**?  
+5. What are **inputs, outputs, and transformations** in Azure Stream Analytics?  
+6. How does **ASA handle real-time data ingestion**?  
+7. What is a **Streaming Unit (SU)** in Azure Stream Analytics?  
+8. How do you configure **Azure Stream Analytics to read data from Azure Event Hubs**?  
+9. What is the difference between **Stream Input and Reference Input**?  
+10. What is **late arrival data**, and how does ASA handle it?  
+
+---
+
+### **2. Intermediate Azure Stream Analytics Interview Questions**
+11. How does **windowing work** in Azure Stream Analytics?  
+12. What are the different types of **windowing functions** in ASA?  
+13. Explain the difference between **Tumbling Window, Sliding Window, Hopping Window, and Session Window**.  
+14. How do you implement **stateful streaming in Azure Stream Analytics**?  
+15. What are the **limitations of ASA** when dealing with high-velocity data?  
+16. How do you **scale Azure Stream Analytics jobs** for performance?  
+17. How does **Azure Stream Analytics support Machine Learning integration**?  
+18. What is **checkpointing**, and how does it help in fault tolerance?  
+19. How do you handle **streaming data joins** in ASA?  
+20. How can you **enrich streaming data** with reference data in Azure Stream Analytics?  
+
+---
+
+### **3. Advanced & Real-World Scenario-Based Questions**
+#### **Scenario 1: IoT Data Processing**
+**Question:** You have thousands of IoT devices sending sensor data in real time. How would you **design an Azure Stream Analytics job** to filter, aggregate, and store meaningful data?  
+
+#### **Scenario 2: Fraud Detection in Financial Transactions**
+**Question:** A banking system needs to detect **fraudulent transactions in real-time**. How would you use **Azure Stream Analytics with anomaly detection** to solve this?  
+
+#### **Scenario 3: Handling Late-Arriving Data**
+**Question:** Your data pipeline **occasionally receives delayed events** due to network latency. How do you **configure ASA to handle late-arriving data** effectively?  
+
+#### **Scenario 4: Integrating ASA with Power BI**
+**Question:** A company wants to **display real-time analytics dashboards in Power BI** using Azure Stream Analytics. What is the best way to **stream data from ASA to Power BI**?  
+
+#### **Scenario 5: Real-Time Sentiment Analysis**
+**Question:** A social media company wants to perform **sentiment analysis on live Twitter feeds**. How would you **process and classify tweets in real time using ASA**?  
+
+---
+
+### **4. ASA Integration with Other Azure Services**
+21. How does **ASA integrate with Azure Event Hubs, IoT Hub, and Blob Storage**?  
+22. What is the role of **Azure Functions in an ASA pipeline**?  
+23. How do you **trigger an Azure Logic App from an ASA job**?  
+24. How does **ASA work with Azure Synapse Analytics**?  
+25. How do you integrate **Azure Stream Analytics with Cosmos DB** for real-time data storage?  
+
+---
+
+### **5. Performance Optimization & Troubleshooting**
+26. What are the best practices for **optimizing performance in Azure Stream Analytics**?  
+27. How do you **monitor and debug Azure Stream Analytics jobs**?  
+28. How do you **reduce latency** in a high-throughput Azure Stream Analytics job?  
+29. What are the **cost optimization strategies** for Azure Stream Analytics?  
+30. How do you handle **data loss scenarios in ASA**?  
+                                         *********************************************************************
+

@@ -1,0 +1,658 @@
+roles and responsibilities in project 
+different file formats
+delta table
+how do you load a file where the columns keeps changing
+why spark is lazy
+what is DAG
+difference between RDD, DATAFRAME, DATASET
+Spark does processing of data in memory why cache is required 
+databricks run time
+have you worked on delta live tables
+workflows in databricks
+write SQL query to find the first highest salary as well as the lowest salary within each department
+
+explain brief about project
+difference rank() dense_rank() row_number()
+medallion architecture 
+how the incremental load is implemented in the silver layer
+CDC? how did you implement it in your project
+some transformation which you used in your project
+types of joins 
+different types of join stratagies
+handling missing data or corrupted data in your project
+importance of using partitioning and bucketing
+what is vaccum and optimize in databricks ? difference between optimize and autooptimize?
+how do you handle data skewness in apache spark
+consider you having orders and customers table. find out the customer who have spent most on their order in the last month in SQL as well as pyspark
+
+-------------------------------------------------------------------------
+
+tell me about your project .explain it 
+what measures you mentioned about the storage cost decreased and cost optimization has been done?
+
+ADF & ADLS
+ 
+There are 10 million csv files in ADLS Gen2. How will you read them and process using ADF? explain in detail
+what is intergration runtime
+what is variable and parameter in ADF
+explain different activities and brief about what each activity does
+The pipeline is scheduled and it got failed. I need to automate it by sending the mail when it gets failed. How would you implement it?
+how do you handle the exceptions in ADF
+If the ADF pipeline is running very slow, how would you approach and fix it
+what is differenece between Blob storage and ADLS Gen2? why ADLS Gen2 is required?
+
+SQL
+
+what are indexes ? why we need it?
+what is stored procedure? can you implement it with a basic example by taking employee table?
+what is view ? why we need view? why we need ? view will also query from table itself right?
+what is cte and subquery ? will cte improve query performance
+how you have optimized the SQL queries in spanner?
+how was the migration from oracle to cloud spanner was done? can you explain it end to end?
+
+AZURE Databricks
+
+how do you connect ADLS GEN 2 with Databricks? In where we mention the role assisgments?
+if you are using service principal to connect with adls from azure databricks explain the steps and how would you code it?
+why using service principal? how would you create it?
+what is databricks runtime? why we need it?
+what are workflow
+explain about the medaliion architecture in brief
+consider you are working in facebook. user is writitng data for each record. since each record is been written, a new json transaction log will get created for each write, But we can use databricks only right. why do we require delta file format? it can decrease the performance the performance every now and then right?
+consider a job is running very slow in azure databricks. How would you approach the issue and make it faster?
+what are the optimization techniques you have worked on? explain them in brief
+How would you optimized the job with respect to memory management in azure databricks?
+
+coding
+
+write the different dbutilies you know
+write a code to read a dataframe from csv files. explain difference option and different modes when reading it.
+write the schema structure for employee table using Struct for columns 
+id, 
+name - 
+            first_name
+            last_name
+salary
+write a code to find the third highest salary for a employee using dataframe approach and spark.sql approach in pyspark
+implement the code for scd2 with housekeeping columns using azure databricks
+write a code for two sum, Explain the different approaches. write code using hashmap approach(brute force, binary search, hashmap)
+
+devops
+have you worked on devops? how you created your pipeline using azure devops
+how the artifacts gets created?
+
+-------------------------------------------------
+how to delete the duplicate records in dept_id 20 and 40 -- using emp table --key column
+write a query to get 5th and 7th maximum salaries from the employee table
+give a table with columns 'name' and 'puamount'; --- calculate the cumulative sum
+using python input - aaaabbbcccc output -- a4b3c4
+given dataframe columns 'name','department','salary' --- find the second highest salary using pyspark
+rename multiple columns like 100 columns
+removes 0s from list 
+-----------------------------------------------
+spark architecture
+components of spark
+RDD
+DataFrame vs DataSet
+handle data skewness 
+benefits of using Delta Lake
+data modeling
+logical and physical data model
+different types of data models
+dimensional modeling
+normalization and denormalization
+
+how do you write unit test for data processing pipeline
+
+optimize data processing jobs
+performance bottlenecks in spark application
+best practices for tuning spark configuration
+handle large datasets efficiently in spark
+DAG workflow
+how do you ensure data security in distributed computing environment
+best practices for securing sensitive data in transit and at rest
+-----------------------------------------------------------------------
+how will you applying indexing on a table in databricks
+explain the use of DAG in spark
+explain optimization techniques in spark
+how do you handle skewed data issues in pyspark
+what are the shuffle operaiton available in pyspark
+difference between spark streaming and structured streaming in pyspark
+explain the difference types of join pyspark
+explain the fault tolerance in pyspark
+what are broad cast variable and braodcast joins
+explain the lazy evaluation in pyspark
+what is RDD, DATAFRAME, DATASET
+what are the different transformation are available
+how to handle null values in pyspark
+how to perform aggregations in pyspark
+difference between cluster mode and client mode
+difference between partitoning and bucketing
+what are the cluster options in databricks
+explain the databricks architecture
+difference between map reduce and spark
+how to read data from CSV file to create data frame
+how to remove duplicate values from data frame
+how to add new column into data frame
+how to select only few columns from data frame
+how to drop columns from data frame
+difference between repartition and coalesce
+how do you handle your pyspark code deployment
+how to call one notebook in another notebook
+how to connect databricks notebook from adf pipeline
+how to estimate the amount of resource for your spark job
+how do you read data from URL in databricks
+what is unit catalog
+you have a csv file, how would you save it in a delta format
+you have a table in your databricks, how would you optimized it
+difference between caching and perisitance
+how does autoloader works
+you have the key vault and you need to pass the value in the notebook, how you do it
+how did you implement increment loading
+how do you manage metadata use in data bricks
+how did you use time travel in your project
+why databricks is good than dataflow
+how to check difference between two version in delta table
+how to read json file in databricks
+how to convert data format in databricks
+how to create blank data frame
+difference between RDD and Dataframe
+how do you register the UDF
+what is lazy transformation
+what is z-ordering
+how you can remove any file from DBFS
+what is unity catalog
+
+--------------------------------------------------------------------------------------------------------
+
+Commonly asked interview questions For Azure data engineer 
+
+1) How do you implement structure streaming? 
+2) What is unity catalog? How it is different from hive meta store?
+3) What are the main challenges you faced while migrating data from on prem to cloud? 
+4) How did you get data from your source? how you implement your notebook along with incoming data?
+5) How are you fetching details from key vault?
+6) What are the different kind of deployment modes available?
+7) What are the steps you perform for the pipeline optimization, if it is taking longer time?
+8) How did you find out sensitive data in your column? if you have millions of rows, how do you identify which can be considered as sensitive? 
+9) How you break complex JSON file? Which symbol you use to break? 
+10) How did you schedule your job in project? 
+11) You have a CSV file, you have to save it as a delta format, how would you do it? 
+12) Without autoloader how you can implement same functionality using PYSPARK of reading 2 files without duplication?
+13) How to send email notifications?
+14) Diff between ADLS GEN 1 and ADLS GEN2?
+15) How many activities can a pipeline hold?
+16) Best practices you use for optimization of data bricks or cost optimization?
+17) What's size if job cluster you used?
+18) How does Z ordering works? 
+19) What is CDC? 
+20) What is logic app? How you use logic apps in your project? 
+21) What is fault-tolerant and how it’s useful in real-time applications?
+22) What is lineage graph and how it differs from DAG?
+23) What is dimension modelling? What is dimension table and fact table? 
+24) Diff between server less pool and dedicated SQL pool?
+25) What is OLTP? What is OLAP?
+26) What is partitioning? What is partition skew? how to solve partition skew issues?
+27) What are the encryption techniques?
+28) What is hash algorithms?
+29) Explain List, tuples, dictionaries?
+30) Diff between managed tables and external tables? when do you go for creating external tables?
+31) Explain the concept of mounting ADLS and secret scope in Azure Databricks?
+32) Have you ever used caching in your project? when & where do you consider using it?
+-----------
+Ensure you prepare well before going for any interview.
+
+1. What cluster Manager you have used in your project ?
+2. What is your cluster Size ?
+3. How does your data comes to your storage location ?
+4. What are the other sources you have used in your project ?
+5. what is the sink for your project ?
+6. What is the frequency of the data in your source ?
+7. What is the volume of your data ?
+8. Please explain your project in detail ?
+9. Lets say out of 100 task, 99 tasks completed however the last task is taking long hours to finish/complete, how to handle this issue ?1
+10. What all challenges you have faced and how did you overcome from it ?
+11. what optimization technique you have used in your project and what is the reason for it ?
+12. Have you done spark optimization tuning ? If yes, how you have done that ?
+13. Can you please walk me through the spark-submit command ?
+14. Lets say you are getting your data volume is 100 GB , In your spark you are doing 5 Actions and 3 transformations on the data, explain what goes behind the scene with respect to Stages ,tasks?
+15. how do you take your code to the higher environment ?
+16. How do you schedule your job in production ?
+17. How do you reprocess the data if it failed ?
+18. Tell me one scenario you have gone wrong with your decision making and what you have learnt from that mistake ?
+19. Lets say you have noticed duplicate records loaded in the table for the particular partition, how you resolved such issues ?
+20. What is the frequency of your jobs ?
+21. How do you notify your business/Stakeholders in case of any job failure?
+---------------------
+1. Can you explain the differences between a DataFrame and an RDD in PySpark?
+2. What techniques would you use to optimize the performance of PySpark code?
+3. How does the Catalyst Optimizer contribute to query execution in PySpark?
+4. Which serialization formats are commonly used in PySpark, and why?
+5. How do you address skewed data issues in PySpark?
+6. Could you describe how memory management is handled in PySpark?
+7. What are the different types of joins in PySpark, and how do you implement them?
+8. What is the purpose of the `broadcast()` function in PySpark, and when should it be used?
+9. How do you define and use User-Defined Functions (UDFs) in PySpark?
+10. What is lazy evaluation in PySpark, and how does it affect job execution?
+11. What are the steps to create a DataFrame in PySpark?
+12. Could you explain the concept of Resilient Distributed Datasets (RDD) in PySpark?
+13. What are actions and transformations in PySpark, and how do they differ?
+14. How do you manage and handle null values in PySpark DataFrames?
+15. What is a partition in PySpark, and how do you control partitioning for better performance?
+16. Can you explain the difference between narrow and wide transformations in PySpark?
+17. How does PySpark infer schemas, and what are the implications of this?
+18. What role does SparkContext play in a PySpark application?
+19. How do you perform aggregations in PySpark, and what are the key considerations?
+20. What strategies do you use for caching data in PySpark to improve performance?
+---------------------
+15 Medium to Hard Databricks Interview Questions
+
+1. How does Databricks handle cluster management and resource allocation for
+optimized performance?
+
+2. What are the best practices for optimizing Apache Spark jobs in Databricks?
+
+3. How does Databricks autoscaling work, and what are the key considerations
+when enabling it?
+
+4. What are the main performance bottlenecks in Databricks Spark jobs, and how do you troubleshoot them?
+
+5. What are Delta Lakes in Databricks, and how do they improve data reliability
+compared to Parquet or ORC?
+
+6. Explain how ACID transactions work in Delta Lake and their benefits in a Data
+Engineering workflow.
+
+7. How does Databricks handle schema evolution in Delta Lake, and what
+challenges can arise?
+
+8. What is data skipping in Delta Lake, and how does it optimize query
+performance?
+
+9. How can you implement data partitioning in Databricks, and when should you
+repartition data?
+
+10. What are the advantages and disadvantages of using caching in Databricks,
+and when should you use CACHE TABLE vs. persist()?
+
+11. How does Databricks handle data serialization, and which formats (Parquet,
+Avro, ORC) are best for different use cases?
+
+12. How can Z-Ordering improve query performance in Delta Lake tables?
+
+13. How can you implement Role-Based Access Control (RBAC) in Databricks for better security?
+
+14. How does Unity Catalog in Databricks enhance data governance and security?
+
+15. What are the best practices for managing secrets and credentials securely in Databricks?
+-----------------------
+🔥 Cracking Azure Data Engineer Interviews? Start Here!
+
+1) What is the difference between Azure Data Lake Storage Gen1 and Gen2?
+2) Explain the architecture of your recent data pipeline project.
+3) What are Delta Tables in Databricks and how are they used?
+4) How does Auto Loader work in Databricks?
+5) What are different types of triggers in ADF?
+6) How do you handle parameterization in ADF pipelines?
+7) Explain the Medallion Architecture.
+8) How do you optimize a PySpark job?
+9) What is partitioning in Delta Lake and why is it important?
+10) How does Data Flow differ from Data Pipeline in ADF?
+11) How do you handle error logging and retry mechanisms in ADF?
+12) What are linked services and datasets in ADF?
+13) How do you connect on-premises DBs like DB2 or SAP HANA to Azure?
+14) What is the difference between Spark SQL and PySpark DataFrame APIs?
+15) What are some common issues you've faced in production and how did you resolve them?
+-----------------------
+🌟𝐏𝐲𝐒𝐩𝐚𝐫𝐤 𝐃𝐚𝐭𝐚 𝐄𝐧𝐠𝐢𝐧𝐞𝐞𝐫𝐢𝐧𝐠 𝐒𝐜𝐞𝐧𝐚𝐫𝐢𝐨-𝐁𝐚𝐬𝐞𝐝 𝐐𝐮𝐞𝐬𝐭𝐢𝐨𝐧𝐬🌟
+
+𝟏. 𝐇𝐚𝐧𝐝𝐥𝐢𝐧𝐠 𝐋𝐚𝐫𝐠𝐞 𝐃𝐚𝐭𝐚𝐬𝐞𝐭𝐬:
+How would you optimise a PySpark job processing a large dataset (1TB+) to enhance performance and minimise execution time?
+
+𝟐. 𝐃𝐚𝐭𝐚 𝐃𝐞𝐝𝐮𝐩𝐥𝐢𝐜𝐚𝐭𝐢𝐨𝐧:
+Given a dataset containing duplicate records across multiple columns, how would you efficiently remove duplicates using PySpark?
+
+𝟑. 𝐒𝐜𝐡𝐞𝐦𝐚 𝐄𝐯𝐨𝐥𝐮𝐭𝐢𝐨𝐧:
+Receiving JSON files with dynamic schemas, how would you manage schema evolution while reading these files using PySpark?
+
+𝟒. 𝐏𝐚𝐫𝐭𝐢𝐭𝐢𝐨𝐧𝐢𝐧𝐠 𝐒𝐭𝐫𝐚𝐭𝐞𝐠𝐲:
+Your dataset, comprising sales transaction data, is partitioned by date. How would you determine the optimal partitioning strategy to optimise query performance?
+
+𝟓. 𝐃𝐚𝐭𝐚 𝐒𝐤𝐞𝐰 𝐇𝐚𝐧𝐝𝐥𝐢𝐧𝐠:
+Identifying and resolving data skew issues that are causing a PySpark job to fail is crucial. How would you approach this challenge?
+
+𝟔. 𝐎𝐩𝐭𝐢𝐦𝐢𝐬𝐢𝐧𝐠 𝐉𝐨𝐢𝐧𝐬:
+Performing a join between a large fact table (10 billion rows) and a small dimension table (1 million rows) is a requirement. Which join strategy would you employ and why?
+
+𝟕. 𝐈𝐧𝐜𝐫𝐞𝐦𝐞𝐧𝐭𝐚𝐥 𝐃𝐚𝐭𝐚 𝐏𝐫𝐨𝐜𝐞𝐬𝐬𝐢𝐧𝐠:
+Processing new data arriving daily without reprocessing historical data is a necessity. How would you implement an incremental data processing pipeline in PySpark?
+
+𝟖. 𝐇𝐚𝐧𝐝𝐥𝐢𝐧𝐠 𝐍𝐮𝐥𝐥 𝐕𝐚𝐥𝐮𝐞𝐬:
+Your dataset contains missing values in critical columns. Which strategies would you employ to manage null values effectively in PySpark?
+
+𝟗. 𝐖𝐫𝐢𝐭𝐢𝐧𝐠 𝐄𝐟𝐟𝐢𝐜𝐢𝐞𝐧𝐭 𝐃𝐚𝐭𝐚𝐅𝐫𝐚𝐦𝐞𝐬:
+Saving a PySpark DataFrame to S3 in an optimised format for querying in Athena is essential. Which file format and compression technique would you recommend?
+
+𝟏𝟎. 𝐃𝐞𝐛𝐮𝐠𝐠𝐢𝐧𝐠 𝐏𝐞𝐫𝐟𝐨𝐫𝐦𝐚𝐧𝐜𝐞 𝐈𝐬𝐬𝐮𝐞𝐬:
+Debugging and optimising the performance of a PySpark job that is running slower than expected is a priority. What steps would you take to address this issue?
+--------------------------
+
+Here are 15 advanced Databricks interview questions you must prepare if you're targeting top data roles in 2025 🚀👇
+
+💡 Advanced Databricks Interview Questions:
+1️⃣ How do you design a cost-efficient Databricks architecture for large-scale batch and streaming workloads?
+ 2️⃣ Explain how you would implement CI/CD for Databricks notebooks and jobs using Azure DevOps or GitHub Actions.
+ 3️⃣ How do you automate cluster lifecycle management for dev/test/prod environments?
+ 4️⃣ How do you monitor and alert on job failures and performance degradation in Databricks at scale?
+ 5️⃣ How does Unity Catalog enforce fine-grained access across workspaces and tables?
+ 6️⃣ What’s the best approach to manage schema enforcement and versioning with Delta Live Tables?
+ 7️⃣ How can you implement multi-layered security for an enterprise-grade Databricks deployment?
+ 8️⃣ How do you integrate Databricks with Azure Purview or Microsoft Fabric for lineage and compliance?
+ 9️⃣ What are the limitations of Delta Lake in real-time ingestion, and how do you work around them?
+ 🔟 How do you implement GDPR or HIPAA compliance in Databricks pipelines and storage layers?
+ 1️⃣1️⃣ Describe how you’d handle real-time deduplication of streaming data using Structured Streaming + Delta Lake.
+ 1️⃣2️⃣ What are best practices for tuning shuffle performance in complex Spark jobs on Databricks?
+ 1️⃣3️⃣ How do you orchestrate complex dependencies between multiple Databricks jobs using Workflows or external orchestrators like ADF/Airflow?
+ 1️⃣4️⃣ Explain how credential passthrough works in Databricks vs. Unity Catalog-based permissions.
+ 1️⃣5️⃣ What are the strategies to reduce Databricks SQL Warehouse costs in analytics-heavy environments?
+
+------------------------------------
+Daily issues faced by Data Engineers:
+
+1. How do you handle job failures in an ETL pipeline?
+2. What steps do you take when a data pipeline is running slower than expected?
+3. How do you address data quality issues in a large dataset?
+4. What would you do if a scheduled job didn't trigger as expected?
+5. How do you troubleshoot memory-related issues in Spark jobs?
+6. What is your approach to handling schema changes in source systems?
+7. How do you manage data partitioning in large-scale data processing?
+8. What do you do if data ingestion from a third-party API fails?
+9. How do you resolve issues with data consistency between different data stores?
+10. How do you handle out-of-memory errors in a Hadoop job?
+11. What steps do you take when a data job exceeds its allocated time window?
+12. How do you manage and monitor data pipeline dependencies?
+13. What do you do if the output of a data transformation step is incorrect?
+14. How do you address issues with data duplication in a pipeline?
+15. How do you handle and log errors in a distributed data processing job?
+----------------------------------
+
+Commonly asked interview questions For Azure data engineer 
+
+1) How do you implement structure streaming? 
+2) What is unity catalog? How it is different from hive meta store?
+3) What are the main challenges you faced while migrating data from on prem to cloud? 
+4) How did you get data from your source? how you implement your notebook along with incoming data?
+5) How are you fetching details from key vault?
+6) What are the different kind of deployment modes available?
+7) What are the steps you perform for the pipeline optimization, if it is taking longer time?
+8) How did you find out sensitive data in your column? if you have millions of rows, how do you identify which can be considered as sensitive? 
+9) How you break complex JSON file? Which symbol you use to break? 
+10) How did you schedule your job in project? 
+11) You have a CSV file, you have to save it as a delta format, how would you do it? 
+12) Without autoloader how you can implement same functionality using PYSPARK of reading 2 files without duplication?
+13) How to send email notifications?
+14) Diff between ADLS GEN 1 and ADLS GEN2?
+15) How many activities can a pipeline hold?
+16) Best practices you use for optimization of data bricks or cost optimization?
+17) What's size if job cluster you used?
+18) How does Z ordering works? 
+19) What is CDC? 
+20) What is logic app? How you use logic apps in your project? 
+21) What is fault-tolerant and how it’s useful in real-time applications?
+22) What is lineage graph and how it differs from DAG?
+23) What is dimension modelling? What is dimension table and fact table? 
+24) Diff between server less pool and dedicated SQL pool?
+25) What is OLTP? What is OLAP?
+26) What is partitioning? What is partition skew? how to solve partition skew issues?
+27) What are the encryption techniques?
+28) What is hash algorithms?
+29) Explain List, tuples, dictionaries?
+30) Diff between managed tables and external tables? when do you go for creating external tables?
+31) Explain the concept of mounting ADLS and secret scope in Azure Databricks?
+32) Have you ever used caching in your project? when & where do you consider using it?
+-----------------------------------
+
+1. Explain the differences between RDDs, DataFrames, and Datasets in PySpark. When would you use each?
+
+2. How does PySpark handle lazy evaluation? Can you provide an example demonstrating this concept?
+
+3. Describe the role of the Catalyst optimizer in PySpark. How does it enhance query execution?
+
+4. What are the various types of joins supported in PySpark? How do they differ in terms of performance and use cases?
+
+5. How can you handle missing or null values in a PySpark DataFrame? What strategies are available?
+
+6. Explain the significance of partitioning in PySpark. How does it impact performance, and how do you implement it?
+
+7. What is the difference between the cache() and persist() methods in PySpark? When would you use each?
+
+8. How do you create and register a user-defined function (UDF) in PySpark? What are the performance considerations?
+
+9. Discuss the concept of shuffling in PySpark. How does it affect performance, and how can it be minimized?
+
+10. Describe a scenario where you had to optimize a PySpark job for performance. What steps did you take?
+
+11. How do you read data from and write data to various file formats (e.g., CSV, Parquet, JSON) in PySpark?
+
+12. Explain how you would perform aggregations in PySpark. What functions and methods are commonly used?
+
+13. What are broadcast variables in PySpark? How do they help in improving the performance of join operations?
+
+14. Describe the process of handling schema evolution in PySpark when dealing with changing data structures.
+
+15. Can you provide an example of a complex PySpark transformation pipeline you've implemented? What challenges did you face, and how did you overcome them?
+-----------------------------------
+
+Most common questions asked in data engineering interviews:
+
+
+What is the difference between an RDD, DataFrame, and Dataset?
+What is lazy evaluation in Spark?
+What is the difference between transformation and action in Spark?
+What are the different types of transformations in Spark?
+What are the different ways to cache/persist in Spark?
+Explain the role of Catalyst Optimizer in Spark SQL.
+What are the different types of joins supported in Spark SQL?
+What is a broadcast join? When should you use it?
+Explain bucketing and partitioning in Spark SQL.
+What is the difference between coalesce() and repartition()?
+How do you handle skewed data in Spark?
+Perform joins between two large DataFrames and optimize the performance.
+----------------------------
+
+🚀 Crack Your PySpark Interview with Real-World Scenario-Based Questions 🔥
+Preparing for a PySpark interview? Beyond theoretical concepts, employers want to see how you solve real-world big data challenges using PySpark. Here are some scenario-based questions to sharpen your skills:
+
+🔹 Scenario 1:
+You have a massive dataset with duplicates. How would you identify and remove duplicates efficiently using PySpark?
+
+🔹 Scenario 2:
+A JSON file with nested data structures needs to be processed and flattened into tabular format. How would you handle this using PySpark DataFrame APIs?
+
+🔹 Scenario 3:
+You need to join two large datasets, but one of them doesn’t fit into memory. How would you optimize the join operation?
+
+🔹 Scenario 4:
+A streaming data source requires real-time processing. How would you implement a solution using Structured Streaming in PySpark?
+
+🔹 Scenario 5:
+The data pipeline is taking too long to process. How would you debug and optimize its performance in PySpark?
+
+🔹 Scenario 6:
+How would you handle missing or null values in a dataset? What strategies would you apply for imputation or exclusion?
+
+🔹 Scenario 7:
+You are tasked with partitioning a large dataset for performance optimization. How would you decide the number of partitions and repartition the data?
+
+🔹 Scenario 8:
+You need to aggregate data and calculate complex KPIs across millions of records. Which PySpark functions would you use, and how would you optimize the computation?
+
+🔹 Scenario 9:
+A PySpark job is failing due to a skewed dataset. How would you identify and fix the data skew issue?
+--------------------------
+
+Data Engineer Interview Questions (2 to 5 Years of Experience)
+
+1. What are the key responsibilities of a Data Engineer?
+2. Explain the difference between OLTP and OLAP systems.
+3. What are ETL and ELT? When would you use one over the other?
+4. What are the common challenges in data engineering?
+5. Explain the concept of data partitioning in a data warehouse.
+6. How do you optimize a slow SQL query?
+7. What is indexing in databases? How does it improve performance?
+8. Explain different types of joins in SQL with examples.
+9. What is denormalization, and when should you use it?
+10. How do you handle duplicate records in SQL?
+11. What is Apache Spark, and how does it compare with Hadoop MapReduce?
+12. Explain the difference between Spark RDD, DataFrame, and Dataset.
+13. What is the difference between cache() and persist() in Spark?
+14. Explain Spark's shuffle operation and how to optimize it.
+15. What are the different types of transformations in Spark?
+16. Write a PySpark code to remove duplicates from a DataFrame.
+17. Write a PySpark code to calculate the moving average of a column.
+18. Write a Scala program to count the number of words in a text file using Spark.
+19. Given a PySpark DataFrame, write a function to fill missing values with the column mean.
+20. Write a PySpark program to group data by a column and calculate the sum of another column.
+21. What is the difference between partitioning and bucketing in Hive?
+22. How does Hive store data internally?
+23. What are different file formats used in Hive?
+24. Explain dynamic partitioning in Hive with an example.
+25. How does indexing work in Hive?
+26. What is Apache Airflow, and how is it used in data pipelines?
+27. Explain how to schedule a pipeline in Airflow.
+28. What are DAGs in Airflow?
+29. How would you handle a failed task in an Airflow DAG?
+30. What is backfilling in Apache Airflow?
+31. What is the difference between AWS S3 and HDFS?
+32. How does AWS Glue work, and when would you use it?
+33. Explain how AWS Lambda can be used in data processing.
+34. What is the difference between Redshift and Athena?
+35. How do you optimize an S3 data lake for faster querying?
+36. What is Apache Kafka, and how does it work?
+37. Explain the difference between Kafka Producer and Consumer.
+38. How do you ensure message ordering in Kafka?
+39. What are Kafka topics and partitions?
+40. How does Kafka handle fault tolerance?
+41. What are some common Spark performance optimization techniques?
+42. How do you optimize data storage in a data lake?
+43. Explain the role of file formats like Parquet and ORC in performance tuning.
+44. What is vectorization in Pandas and Spark, and how does it help in performance?
+45. What are best practices for optimizing SQL queries on large datasets?
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+1️⃣ How would you architect a modern data warehouse using Synapse, Data Lake Gen2, and Power BI with minimal latency?
+ 2️⃣ How do you handle cross-region data replication in Synapse while maintaining consistency and compliance?
+ 3️⃣ What’s your strategy for securing sensitive data in Synapse while enabling self-service analytics for business users?
+ 4️⃣ How does PolyBase work in Synapse, and how does it differ from OPENROWSET for querying external data?
+ 5️⃣ Explain how workload management and resource classes help optimize query performance in Synapse Dedicated Pools.
+ 6️⃣ How would you manage large-scale parameterized pipeline executions for hundreds of source systems?
+ 7️⃣ How do you automate pipeline deployment, monitoring, and rollback using Azure DevOps and ARM/Bicep templates?
+ 8️⃣ What is the role of managed virtual networks in Synapse, and how do they improve data security?
+ 9️⃣ Describe how you’d enforce data access policies for different departments using Synapse + Azure AD + Purview.
+ 🔟 What’s the best approach to load TB-scale fact tables with slowly changing dimensions into Synapse efficiently?
+ 1️⃣1️⃣ How do you integrate Synapse with DataBricks or HDInsight in a hybrid architecture?
+ 1️⃣2️⃣ Explain the difference between pipeline concurrency vs. parallel activities inside Synapse Pipelines.
+ 1️⃣3️⃣ How would you implement custom logging and alerting in Synapse Pipelines beyond built-in diagnostics?
+ 1️⃣4️⃣ What are the different authentication methods Synapse supports for accessing external sources like SQL DB or Blob Storage?
+ 1️⃣5️⃣ How do you optimize data freshness and latency when ingesting near real-time data into Synapse SQL pools?
+
+---------------------------------------------------
+
+Interview Questions for azure data engineer
+
+I faced these questions in recent interviews.
+
+1) Explain the different file formats that you are using in your project (CSV, JSON, PARQUET, Delta Table)?
+2) If in source we have three columns and in destination we want to add one more column then how can you achieve this in ADF?
+3) How did you implemented SCD2 in your project?
+4) How to transfer data to azure synapse?
+5) What is the significance of Catalyst Optimizer in PYSPARK?
+6) What is schema on read and schema on write?
+7) How much data you deal with on daily basic?
+8) Explain the out of memory issue?
+9) Query to delete the duplicate records? Explain all other types to delete duplicate records in SQL?
+10) Explain Windows functions with example in SQL and PYSPARK?
+11) What is serverless computing?
+12) If a job is failed then how did you debug it?
+13) How to optimize the slow running query?
+14) What is shuffling in transformations?
+15) How to use nested JSON with data bricks?
+16) If data is not loading from the source in Azure Data Factory (ADF), then what will you do?
+17) How many pipelines you have created?
+18) PYSPARK command to read the data from a file into a data frame?
+19) What is explode function in PYSPARK?
+20) Write a code to read a parquet file?
+21) What is YARN?
+22) How did you create the Temp View?
+23) Diff between DAG and LINEAGE?
+24) How did you manage the pipeline from failed activity?
+25) What is Partition? how spark partitions the data?
+26) What is broadcast variable and broadcast joins in spark?
+27) What is serialization and deserialization?
+28) What is Common Data Model (CDM)?
+29) What are the steps you have taken for data security in your project?
+30) Diff between procedure and functions?
+31) What is normalization and denormalization? what are its uses?
+32) Diff between data lake and delta lake and data warehouse? 
+33) What is time travel? how did you use time travel in your project?
+34) How does Z Ordering works? What is the use of Z ordering?
+35) How did you get the data from Rest API?
+36) What is data skewness in spark?
+37) Merge statement in data bricks?
+38) What are the prerequisites before the migration?
+39) What is logic apps? How did you used logic apps in your project?
+40) Diff between coalesce and is null?
+
+-------------------------------------------------------
+
+𝗧𝗿𝗲𝗱𝗲𝗻𝗰𝗲 𝗜𝗻𝘁𝗲𝗿𝘃𝗶𝗲𝘄 𝗤𝘂𝗲𝘀𝘁𝗶𝗼𝗻𝘀
+
+1. What is the difference between groupByKey and reduceByKey in PySpark?
+2. How to register a User Defined Function (UDF) in PySpark?
+3. What are Delta logs, and how to track data versioning in Delta tables?
+4. How do you monitor and troubleshoot ADF pipeline failures?
+5. What is the use of Delta Lake, and how does it support ACID transactions?
+6. Explain the concept of Managed Identity in Azure and its use in data engineering.
+7. Write a SQL query to find employees earning more than their manager.
+8. Describe the process of migrating on-premises databases to Azure SQL Database.
+9. Write PySpark code to filter records based on a condition.
+10. How do you implement error handling in ADF pipelines?
+11. Explain the role of SparkSession in PySpark.
+12. How do you optimize storage costs in ADLS?
+13. Write a SQL query to find duplicate records in a table.
+14. What is the purpose of caching in PySpark, and how is it implemented?
+15. Describe the process of integrating ADF with Databricks for ETL workflows.
+16. Write Python code to count the frequency of words in a string.
+17. How do you handle schema evolution in Delta Lake?
+18. Explain the difference between streaming and batch processing in Spark.
+19. How do you secure data pipelines in Azure?
+20. What are the best practices for managing large datasets in Databricks?
+
+-----------------------------------------------
+
+Generate Prime Numbers:
+Check if a String is a Palindrome:
+Replace Vowels with Spaces: 
+Count Word Occurrences
+Find Number That Appears Consecutively 3 Times: 
+Split Name into Firstname and Lastname:
+Generate Fibonacci Numbers
+Find Duplicates and Count Occurrences:
+
+
+def gen_fib(n):
+   fib = [0,1]
+   for i in range(2,n):
+       fib.append(fib[i-1] + fib[i-2])
+   return fib[:n]
+
+from collections import defaultdict
+
+def find(lst):
+     counts = defultdict(int)
+     for item in lst:
+         count[item] += 1
+      duplicate = {k:v for k,v in count.items() if v > 1}
+      return duplicate
+

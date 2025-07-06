@@ -1,0 +1,133 @@
+azure synapse 
+Fundamental Questions:
+
+
+What is Azure Synapse Analytics?
+
+Can you explain the architecture of Azure Synapse Analytics?
+
+What are the key components of Azure Synapse Analytics?
+
+How does Azure Synapse integrate with Azure Data Lake Storage Gen2?
+
+What is the difference between provisioned and serverless SQL pools in Azure Synapse?
+
+What is PolyBase in Azure Synapse, and how does it facilitate data integration?
+
+How does Azure Synapse ensure data security and compliance?
+
+What are the data distribution options in Azure Synapse, and how do they impact performance?
+
+Can you explain the concept of Dedicated SQL Pools in Azure Synapse?
+
+How does Azure Synapse integrate with Power BI for data visualization?
+
+Intermediate Questions:
+Describe the process of optimizing query performance in Azure Synapse Analytics.
+
+How do you monitor and manage resource utilization in Azure Synapse?
+
+What are materialized views in Azure Synapse, and how do they improve query performance?
+
+How does Azure Synapse handle real-time data processing and analytics?
+
+What is the role of Synapse Pipelines in data orchestration within Azure Synapse?
+
+How would you implement a disaster recovery strategy for Azure Synapse Analytics?
+
+Can you discuss the integration capabilities of Azure Synapse with other Azure services?
+
+What are the best practices for managing costs in Azure Synapse Analytics?
+
+How does Azure Synapse support machine learning and advanced analytics workloads?
+
+Explain the concept of workspace management in Azure Synapse.
+
+Advanced Questions:
+Describe a scenario where you optimized a data warehouse using Azure Synapse Analytics. What challenges did you face, and how did you address them?
+
+How would you design a data ingestion pipeline in Azure Synapse to handle both batch and streaming data?
+
+Can you provide an example of implementing a complex ETL process using Azure Synapse Pipelines?
+
+Discuss a situation where you had to troubleshoot performance issues in Azure Synapse. What steps did you take to identify and resolve the problems?
+
+How would you approach data partitioning and distribution for a large-scale dataset in Azure Synapse to ensure optimal performance?
+
+Explain how you have used Azure Synapse to integrate data from disparate sources in a previous project.
+
+Describe a use case where you implemented real-time analytics using Azure Synapse and the challenges encountered.
+
+How have you utilized Synapse Spark pools for big data processing in a real-world project?
+
+Discuss a scenario where you implemented security measures in Azure Synapse to meet specific compliance requirements.
+
+Can you provide an example of how you have used Azure Synapse to deliver business insights through data visualization and reporting?
+
+
+
+Scenario based questions
+----------------------------
+
+
+1. Real-Time Data Ingestion and Processing with Event Hubs + Synapse Analytics
+Scenario:
+A financial services company wants to process real-time stock market data and detect anomalies in trading patterns. The data streams into Azure Event Hubs, which must be processed and analyzed in Azure Synapse Analytics.
+
+Interview Question:
+
+How would you design a real-time data pipeline in Azure Synapse to process incoming stock market data from Event Hubs?
+What challenges do you foresee in real-time event processing, and how would you optimize the system?
+2. IoT Data Analysis with Azure IoT Hub + Azure Synapse
+Scenario:
+A manufacturing company is collecting data from IoT sensors installed in their factories. The goal is to monitor equipment performance, predict failures, and optimize maintenance schedules.
+
+Interview Question:
+
+How would you design an IoT-based data processing pipeline using Azure Synapse, IoT Hub, and Azure Data Factory?
+How can you leverage serverless SQL pools in Azure Synapse for cost-effective querying of sensor data?
+3. Data Lakehouse Architecture with ADLS + Synapse
+Scenario:
+An e-commerce company wants to implement a data lakehouse by integrating Azure Data Lake Storage (ADLS) with Azure Synapse Analytics to enable both structured and unstructured data analysis.
+
+Interview Question:
+
+What are the key considerations when integrating Azure Data Lake Storage Gen2 with Azure Synapse Analytics?
+How do Partitioning, PolyBase, and Materialized Views help improve performance when querying large datasets from ADLS?
+4. ETL and Data Transformation with ADF + Synapse
+Scenario:
+A healthcare company is collecting patient data from multiple hospitals and needs to perform ETL transformations before loading the data into Azure Synapse Analytics for reporting and analytics.
+
+Interview Question:
+
+How would you design a high-performance ETL pipeline using Azure Data Factory (ADF) and Azure Synapse?
+What performance optimizations would you apply when transforming large volumes of healthcare data?
+
+
+Data Governance with Purview + Synapse
+Scenario:
+A pharmaceutical company needs to comply with GDPR and HIPAA regulations for handling sensitive patient and clinical trial data. They want to use Azure Purview for data governance and integrate it with Azure Synapse.
+
+Interview Question:
+
+How would you implement data lineage, classification, and compliance in Azure Synapse using Azure Purview?
+How do you ensure RBAC (Role-Based Access Control) and masking sensitive data in Azure Synapse?
+7. Big Data Processing with Synapse Spark + Delta Lake
+Scenario:
+A social media company processes massive volumes of user activity logs. They want to use Azure Synapse Spark pools and Delta Lake to efficiently store and analyze this data.
+
+Interview Question:
+
+What are the advantages of using Delta Lake with Azure Synapse for big data processing?
+How would you optimize Synapse Spark performance when dealing with large-scale data ingestion?
+
+
+
+Data Synchronization Across Regions with Synapse + Cosmos DB
+Scenario:
+A global supply chain company needs to synchronize real-time inventory data across multiple regions using Azure Synapse Analytics and Cosmos DB.
+
+Interview Question:
+
+How would you design a multi-region data synchronization architecture using Azure Synapse Analytics and Cosmos DB?
+How does Cosmos DB’s Change Feed help in real-time analytics within Azure Synapse?

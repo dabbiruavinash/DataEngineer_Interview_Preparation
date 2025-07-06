@@ -1,0 +1,502 @@
+************ADB azure databricks***********
+-------------------------------------------------'
+What is Azure Databricks, and how does it differ from traditional Spark clusters?****
+
+Azure Databricks is a cloud-based data analytics platform optimized for Azure, built on top of Apache Spark. It provides a collaborative environment for data engineers, data scientists, and analysts to process, analyze, and visualize large-scale data. Unlike traditional Spark clusters, Azure Databricks offers:
+
+Managed Service: Azure Databricks is fully managed, meaning Azure handles cluster provisioning, configuration, and maintenance.
+
+Integration with Azure Services: It seamlessly integrates with Azure services like Azure Data Lake Storage, Azure Synapse Analytics, and Azure Machine Learning.
+
+Collaborative Workspace: Provides a unified workspace for teams to collaborate using notebooks, dashboards, and jobs.
+
+Optimized Performance: Includes performance optimizations like Delta Lake for ACID transactions and optimized Spark engines.
+
+Scalability: Automatically scales clusters up or down based on workload demands.
+
+Explain the architecture of Azure Databricks.---------------------------------------------------------
+
+The architecture of Azure Databricks consists of the following layers:
+
+Control Plane: Manages the workspace, clusters, jobs, and notebooks. It runs on Azure infrastructure but is managed by Databricks.
+
+Data Plane: Where the actual data processing happens. It includes Spark clusters running on Azure VMs.
+
+Storage Layer: Data is stored in Azure Blob Storage, Azure Data Lake Storage, or other external data sources.
+
+Compute Layer: Spark clusters are dynamically provisioned and managed by Azure Databricks.
+
+Security Layer: Includes Azure Active Directory integration, role-based access control (RBAC), and encryption for data at rest and in transit.
+
+What are the key components of Azure Databricks?****-------------------------------------------------------------------
+
+Workspace: A collaborative environment for creating and managing notebooks, dashboards, and libraries.
+
+Clusters: Compute resources for running Spark jobs. Can be interactive (for ad-hoc analysis) or job clusters (for scheduled tasks).
+
+Notebooks: Interactive documents for writing and executing code in multiple languages.
+
+Jobs: Scheduled or triggered tasks for running notebooks or JARs.
+
+Libraries: Custom code or packages that can be installed on clusters.
+
+Databricks File System (DBFS): A distributed file system for storing data.
+
+Delta Lake: An optimized storage layer for ACID transactions and scalable metadata handling.
+
+MLflow: Integrated machine learning lifecycle management.
+
+What is the Databricks Workspace, and what are its key features?---------------------------------
+
+The Databricks Workspace is a unified interface for data teams to collaborate on data engineering, data science, and analytics tasks. Key features include:
+
+Notebooks: Interactive coding environment supporting multiple languages.
+
+Dashboards: Visualize data and share insights.
+
+Cluster Management: Create, configure, and monitor Spark clusters.
+
+Library Management: Install and manage libraries for clusters.
+
+Job Scheduling: Schedule and monitor jobs.
+
+Version Control: Integration with Git for version control.
+
+Collaboration: Share notebooks and dashboards with team members.
+
+What are the different cluster modes in Databricks?--------------------------------
+
+Interactive Clusters: Used for ad-hoc analysis and development. Multiple users can share the same cluster.
+
+Job Clusters: Created for running scheduled or automated jobs. They terminate after the job completes.
+
+High Concurrency Clusters: Optimized for multiple users with fine-grained access control and resource sharing.
+
+What is the role of Apache Spark in Azure Databricks?--------------------------------------
+
+Apache Spark is the core engine in Azure Databricks for distributed data processing. It enables:
+
+Data Processing: Batch and real-time data processing.
+
+Machine Learning: Integration with MLlib for scalable machine learning.
+
+Streaming: Real-time data streaming with Spark Streaming.
+
+SQL Analytics: Running SQL queries on large datasets.
+
+Graph Processing: Graph computation with GraphX.
+
+Azure Databricks enhances Spark with optimizations like Delta Lake and Photon (a high-performance query engine).
+
+What is a Databricks notebook, and how is it used?-----------------------------
+
+A Databricks notebook is an interactive document that allows users to write and execute code in multiple languages (Python, Scala, SQL, R). It is used for:
+
+Data Exploration: Query and visualize data.
+
+Data Transformation: Perform ETL operations.
+
+Machine Learning: Develop and train models.
+
+Collaboration: Share code and insights with team members.
+
+Scheduling: Run notebooks as part of automated jobs.
+
+What programming languages does Databricks support?--------------------------------
+
+Databricks supports the following languages:
+
+Python
+
+Scala
+
+SQL
+
+R
+
+Java (via JAR files)
+
+Explain Databricks File System (DBFS) and its importance.****------------------------------------
+
+DBFS is a distributed file system integrated into Azure Databricks. It provides:
+
+Persistent Storage: Stores data across cluster restarts.
+
+Scalability: Handles large-scale data.
+
+Integration: Works seamlessly with Azure Blob Storage and Azure Data Lake Storage.
+
+Ease of Use: Provides a simple interface for accessing data.
+
+DBFS is important because it simplifies data management and ensures data is accessible to all cluster nodes.
+
+What are Mount Points in Azure Databricks, and how do you use them?**--------------------------------
+
+Mount Points in Azure Databricks allow you to link external storage (e.g., Azure Blob Storage, Azure Data Lake Storage) to DBFS. This makes it easier to access and manage external data. To use them:
+
+Create a Mount Point:
+dbutils.fs.mount(
+  source = "wasbs://<container>@<storage-account>.blob.core.windows.net",
+  mount_point = "/mnt/<mount-name>",
+  extra_configs = {"<conf-key>":dbutils.secrets.get(scope="<scope-name>", key="<key-name>")})
+
+Access Data:
+df = spark.read.csv("/mnt/<mount-name>/<file-path>")
+
+Unmount:
+dbutils.fs.unmount("/mnt/<mount-name>")
+
+intermediate
+-------------
+Intermediate-Level Azure Databricks Questions
+How does Azure Databricks integrate with Azure Data Lake Storage (ADLS)?
+
+direct access:
+df = spark.read.csv("abfss://<container>@<storage-account>.dfs.core.windows.net/<path>")
+
+Mount Points: Mount ADLS to DBFS for easier access.
+dbutils.fs.mount(
+  source = "abfss://<container>@<storage-account>.dfs.core.windows.net",
+  mount_point = "/mnt/<mount-name>",
+  extra_configs = {"<conf-key>": dbutils.secrets.get(scope="<scope-name>", key="<key-name>")})
+
+Service Principal Authentication: Use Azure Active Directory (AAD) for secure access.
+
+Delta Lake Integration: Store Delta tables directly in ADLS for ACID transactions and versioning.
+
+What are Delta Tables in Databricks, and how do they improve performance?
+Delta Tables are an optimized storage layer built on top of Parquet files. They provide:
+ACID Transactions: Ensures data consistency.
+Schema Enforcement: Prevents data corruption by enforcing schemas.
+Time Travel: Allows querying historical data versions.
+Optimized Performance: Uses indexing, caching, and compaction for faster queries.
+Scalability: Handles large-scale data efficiently.
+Delta Tables improve performance by reducing I/O operations and enabling efficient data versioning and management.
+
+Explain the difference between Databricks Delta Lake and traditional Parquet storage.
+
+
+
+How do you optimize Spark jobs in Databricks?*****
+
+Cluster Configuration: Use appropriate instance types and cluster sizes.
+Caching: Cache frequently used datasets using df.cache().
+Partitioning: Partition data to reduce shuffling.
+Broadcast Joins: Use broadcast joins for small datasets.
+Delta Lake: Use Delta Tables for optimized storage.
+Photon Engine: Enable Photon for faster query execution.
+Avoid Skew: Ensure data is evenly distributed.
+Tune Spark Configs: Adjust configurations like spark.sql.shuffle.partitions.
+
+What are the different types of clusters in Databricks, and when should each be used?
+
+Interactive Clusters: For ad-hoc analysis and development. Shared by multiple users.
+Job Clusters: For scheduled or automated jobs. Terminates after job completion.
+High Concurrency Clusters: For multiple users with fine-grained access control and resource sharing.
+
+How do you configure autoscaling in Azure Databricks clusters?
+
+Enable Autoscaling: Set the cluster to "Autoscale" mode.
+Define Min/Max Workers: Specify the minimum and maximum number of workers.
+Optimize Workloads: Ensure workloads are stateless to leverage autoscaling effectively.
+
+What is the Databricks Runtime, and how does it impact performance?
+
+Databricks Runtime is an optimized version of Apache Spark with additional libraries and performance enhancements. It includes:
+Photon Engine: A vectorized query engine for faster SQL queries.
+Delta Lake: Built-in support for Delta Tables.
+ML Libraries: Pre-installed machine learning libraries.
+Security: Integrated security features like encryption and access control.
+It improves performance by optimizing Spark execution and reducing overhead.
+
+How do you schedule jobs in Databricks?******
+
+Create a Job: In the Databricks UI, go to Jobs > Create Job.
+Add Tasks: Define tasks (e.g., running a notebook or JAR).
+Schedule: Set a cron schedule or trigger based on events.
+Monitor: Use the Jobs UI to monitor job status and logs.
+
+What are Databricks Widgets, and how can they be used for parameterized notebooks?
+
+Databricks Widgets allow you to add interactive parameters to notebooks. They can be used for:
+Dynamic Inputs: Pass parameters to notebooks.
+Reusability: Use the same notebook for different inputs.
+Types: Text, dropdown, combobox, and multiselect.
+
+dbutils.widgets.text("input", "default_value")
+input_value = dbutils.widgets.get("input")
+
+How do you integrate Azure Databricks with Azure Data Factory (ADF)?*****
+
+Databricks Linked Service: Create a linked service in ADF for Databricks.
+Notebook Activity: Use the Notebook activity in ADF pipelines to run Databricks notebooks.
+Pass Parameters: Pass parameters from ADF to Databricks notebooks.
+Monitor: Track pipeline execution in ADF.
+
+How does Databricks handle Big Data processing compared to Hadoop?
+
+What is Photon Engine in Databricks, and how does it improve query performance?
+
+Photon Engine is a vectorized query engine in Databricks Runtime. It improves performance by:
+Vectorized Execution: Processes data in batches instead of row-by-row.
+Native Code Execution: Uses C++ for faster processing.
+Optimized Operators: Enhances SQL and DataFrame operations.
+Reduced Overhead: Minimizes CPU and memory usage.
+
+How do you implement CI/CD (DevOps) in Azure Databricks?*****
+
+Version Control: Use Git integration for notebooks.
+Automated Testing: Write unit tests for notebooks and jobs.
+CI/CD Pipelines: Use Azure DevOps or GitHub Actions for automation.
+Deployment: Deploy notebooks and libraries using Databricks CLI or REST API.
+Monitoring: Track deployments and rollbacks.
+
+What are the different data ingestion methods in Databricks?
+
+Batch Ingestion: Use Spark to read from sources like ADLS, Blob Storage, or databases.
+Streaming Ingestion: Use Spark Streaming or Structured Streaming for real-time data.
+Delta Lake: Ingest data into Delta Tables for optimized storage.
+Third-Party Tools: Use tools like Apache Kafka or Azure Event Hubs.
+Databricks Connect: Ingest data from external applications.
+
+IMP
+------------
+What is the difference between Standard, Premium, and Enterprise pricing tiers in Databricks?********
+
+How does Databricks handle streaming data with Structured Streaming?**********
+
+Structured Streaming in Databricks is built on Apache Spark and provides a scalable, fault-tolerant way to process real-time data. Key features include:
+Unified API: Use the same DataFrame API for batch and streaming.
+Event-Time Processing: Handle late-arriving data with watermarking.
+Fault Tolerance: Ensures exactly-once processing semantics.
+Integration: Works with Kafka, Event Hubs, and other streaming sources.
+Delta Lake: Stream data directly into Delta Tables for ACID transactions
+
+streaming_df = spark.readStream.format("kafka").option("kafka.bootstrap.servers", "host:port").load()
+query = streaming_df.writeStream.format("delta").outputMode("append").start("/path/to/delta-table")
+
+How do you use ACID transactions in Delta Lake?*********
+
+ACID transactions in Delta Lake ensure data consistency and reliability. Key operations include:
+Atomic Writes: Ensures all or nothing writes.
+Consistency: Maintains data integrity.
+Isolation: Prevents concurrent writes from interfering.
+Durability: Ensures data is persisted.
+
+Explain the concept of Z-Ordering and Data Skipping in Databricks Delta Lake.******
+
+Z-Ordering: Optimizes the physical layout of data by colocating related information in the same files. This improves query performance by reducing the amount of data read.
+
+df.write.format("delta").mode("overwrite").option("dataChange", "false").save("/path/to/delta-table")
+
+Data Skipping: Automatically skips irrelevant data files based on metadata, reducing I/O operations.
+
+How do you handle schema evolution in Databricks Delta Lake?***
+
+Schema evolution in Delta Lake allows you to change the schema of a table over time. Key features include:
+Schema Enforcement: Ensures data adheres to the defined schema.
+Schema Merging: Automatically merges schemas when appending data.
+Manual Updates: Use ALTER TABLE to change the schema.
+
+df.write.format("delta").mode("append").option("mergeSchema", "true").save("/path/to/delta-table")
+
+Intermediate-Level to expertise
+=------------------------------------
+Real-Time Scenario-Based Azure Databricks Questions
+Scenario: You need to process 5 TB of raw data daily in Databricks. How would you optimize cluster performance and reduce costs?
+
+Cluster Optimization:
+Use autoscaling to dynamically adjust cluster size based on workload.
+Choose memory-optimized instances for large datasets.
+Enable Photon Engine for faster query execution.
+
+Data Partitioning:
+Partition data by a relevant column (e.g., date) to reduce shuffle operations.
+
+Delta Lake:
+Use Delta Lake for efficient storage and ACID transactions.
+Apply Z-Ordering and Data Skipping to optimize query performance.
+
+Cost Reduction:
+Use spot instances for non-critical workloads.
+Schedule jobs during off-peak hours to leverage lower compute costs.
+Terminate clusters when not in use.
+
+Scenario: You need to implement slowly changing dimensions (SCD Type 2) in Delta Lake. How would you do it?
+
+MERGE INTO target_table AS target
+USING source_table AS source
+ON target.id = source.id
+WHEN MATCHED AND target.is_current = true AND target.attributes != source.attributes THEN
+  UPDATE SET target.end_date = current_date(), target.is_current = false
+WHEN NOT MATCHED THEN
+  INSERT (id, attributes, start_date, end_date, is_current)
+  VALUES (source.id, source.attributes, current_date(), null, true);
+
+Scenario: Your Databricks job is running slow due to high shuffle operations. How would you diagnose and fix the issue?
+
+Diagnosis:
+Use the Spark UI to identify stages with high shuffle read/write.
+Check for data skew using df.groupBy().count().
+
+Fixes:
+Repartition: Use repartition() or coalesce() to evenly distribute data.
+Broadcast Joins: Use broadcast joins for small datasets.
+
+Tune Configurations:
+Increase spark.sql.shuffle.partitions.
+Adjust spark.executor.memory and spark.executor.cores.
+
+Scenario: You need to ingest streaming data from Event Hubs into Databricks. How would you design the pipeline?
+
+
+
+Scenario: Your Databricks notebook needs to access multiple Azure services like Blob Storage, SQL Database, and Cosmos DB. What authentication mechanism would you use?
+
+
+
+Scenario: A business wants near real-time analytics on IoT data using Databricks and Power BI. How would you implement this solution?
+
+Data Ingestion:
+Use Structured Streaming to ingest IoT data from sources like Event Hubs or Kafka.
+
+Data Processing:
+Perform real-time transformations and aggregations in Databricks.
+
+Storage:
+Write processed data to Delta Lake for efficient querying.
+
+Visualization:
+Connect Power BI to Delta Lake using the Databricks connector.
+Create dashboards for real-time analytics.
+
+Scenario: Your Databricks job failed due to out-of-memory errors. How would you debug and resolve this?
+
+Debugging:
+Check the Spark UI for memory usage and task failures.
+Look for data skew or large partitions.
+
+Fixes:
+Increase Memory: Allocate more memory to executors using spark.executor.memory.
+Repartition: Use repartition() to evenly distribute data.
+Broadcast Joins: Use broadcast joins for small datasets.
+Cache Wisely: Avoid caching large datasets unnecessarily.
+
+Scenario: You need to schedule a Databricks job that runs every hour and loads data into Synapse Analytics. How would you set it up?
+
+Job Creation:
+Create a Databricks job to run a notebook or JAR.
+Configure the job to load data into Synapse Analytics.
+
+Scheduling:
+Use the Databricks Jobs UI to set a cron schedule (e.g., 0 * * * * for hourly runs).
+
+Data Transfer:
+Use the Synapse Connector or PolyBase to load data into Synapse
+
+Scenario: How do you handle time travel (versioning) in Delta Lake for rollback scenarios?
+
+Use the VERSION AS OF or TIMESTAMP AS OF syntax to query past versions.
+RESTORE TABLE delta_table TO VERSION AS OF 5;
+
+Scenario: How would you implement Change Data Capture (CDC) in Databricks Delta?
+
+MERGE INTO target_table AS target
+USING cdc_stream AS source
+ON target.id = source.id
+WHEN MATCHED THEN
+  UPDATE SET target.column = source.column
+WHEN NOT MATCHED THEN
+  INSERT (id, column) VALUES (source.id, source.column);
+
+databricks with other services
+----------------------------------
+How does Databricks integrate with Azure Data Factory (ADF)?
+What are the best practices for connecting Azure Databricks to Azure Synapse Analytics?
+How do you configure Databricks to read and write data to Azure Blob Storage?
+How do you secure Databricks with Azure Key Vault for managing secrets?
+How do you use Azure Event Hubs to stream real-time data into Databricks?
+What are the steps to connect Databricks with Azure SQL Database?
+How does Azure Databricks handle authentication using Managed Identity?
+How can you monitor Databricks job failures using Azure Monitor?
+How do you optimize Azure Databricks when integrating with Power BI?
+What are the best practices for cost optimization when using Azure Databricks?
+
+What are the best practices for tuning Spark jobs in Databricks?****
+How do you optimize Databricks performance when processing large datasets?***
+What is auto-scaling in Databricks, and when should it be used?
+How does Databricks caching improve performance?******
+What are Broadcast Joins, and when should they be used in Databricks?*******
+How do you identify and resolve data skew issues in Databricks?**
+How do you optimize Shuffle partitions in Databricks?*****8
+How does Photon Engine optimize SQL queries in Databricks?****
+What is Predicate Pushdown, and how does it impact performance?
+What are cost-effective ways to store large datasets in Delta Lake?****
+How do you implement Role-Based Access Control (RBAC) in Databricks?*******
+How do you secure Databricks notebooks and cluster access?****
+What is Unity Catalog in Databricks, and how does it improve data governance?*******
+
+bit imp
+----
+How do you debug Databricks jobs that fail with memory errors?****
+
+Identify the Issue:
+Check the Spark UI for memory usage and task failures.
+Look for stages with high shuffle read/write or skewed data.
+
+Common Causes:
+Data Skew: Uneven distribution of data across partitions.
+Large Partitions: Some partitions are too large to fit in memory.
+Insufficient Resources: Cluster size is too small for the workload.
+
+Fixes:
+Repartition Data: Use repartition() or coalesce() to evenly distribute data.
+Broadcast Joins: Use broadcast joins for small datasets.
+Increase Memory: Allocate more memory to executors using spark.executor.memory.
+Tune Configurations:
+Increase spark.sql.shuffle.partitions.
+Adjust spark.executor.cores and spark.memory.fraction.
+
+How do you monitor Databricks cluster performance?**
+
+Spark UI:
+Access the Spark UI through the Databricks workspace.
+Monitor stages, tasks, and memory usage.
+
+Cluster Logs:
+Check driver and executor logs for errors and warnings.
+
+Ganglia UI:
+Use the Ganglia UI to monitor CPU, memory, and disk usage.
+
+Databricks Metrics:
+Use Databricks REST API or CLI to collect cluster metrics.
+
+Third-Party Tools:
+Integrate with monitoring tools like Azure Monitor or Datadog
+
+What are the best practices for logging and monitoring in Databricks?***
+
+import logging
+logging.basicConfig(level=logging.INFO)
+logging.info("This is an info message")
+
+Monitoring:
+Enable cluster logging to Azure Storage or DBFS.
+Use Spark Listeners to track job progress and performance.
+
+Alerting:
+Set up alerts for job failures or high resource usage using Azure Monitor.
+
+Dashboards:
+Create dashboards in Power BI or Grafana to visualize metrics.
+
+
+
+How do you debug Databricks job failures due to missing data?
+
+
+
+What are common errors in Databricks Delta Lake, and how do you fix them?****
+
+

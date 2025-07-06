@@ -1,0 +1,192 @@
+1. How to provide dynamic name to the target file based on pipelinerundate In azure data factory
+2. How to copy a specific file from folder using parameterized dataset in azure data factory
+3. How to copy all the files from one ADLS folder to another in Azure Data factory
+4. How to copy files of specific format from one ADLS folder to another using ADF pipeline
+5. How to load all the foldernames and count of files inside each folder into SQL table using ADF
+6. How to retrieve folder having valid date in the foldername using adf pipeline
+7. How to get the list of empty and non-empty ADLS folders using adf pipelines
+8. How to copy the data from input blob to output as soon as the status turns to ‘Y’
+9. How to copy multiple files as soon as the status turns to ‘Y’
+10. How to write filenames as separate rows in csv using adf pipeline
+11. How to write filenames as separate rows in csv using adf pipeline without dataflow
+12. How to copy latest file or last modified file of ADLS folder using ADF pipeline
+13. How to copy last modified files from multiple folders into another folder using ADF pipeline
+14. How to copy Top N last modified files from one ADLS folder to another using ADF pipeline
+15. How to fetch pipeline details using dynamic annotations in Azure data factory
+16. How to run Inner activity as many times as diff between two dates
+17. How to expand range of integers using azure data factory pipelines
+18. How to swap array elements using azure data factory pipelines
+19. How to reverse an array using azure data factory pipelines
+20. How to sort an array using Azure Data Factory Pipelines
+21. How to sort an array with the help of SQL table using azure data factory pipelines
+22. How to add zero padding to the numbers using azure data factory pipelines
+23. Log pipeline execution details in azure data factory
+24. Log pipeline execution details using stored procedure in azure data factory
+25. How to capture error message and other properties of dataflow in ADF
+26. How to setup email alerts with Azure Log Analytics for azure Data Factory pipeline
+27. How to get email notifications for pipeline failures by creating alert rules within ADF
+28. How to merge files based on file name pattern using ADF pipeline
+29. Execute ADF pipeline via REST API call
+30. Execute ADF pipeline via rest API from other ADF
+31. How to Query pipeline runs in ADF based on input filter conditions
+32. How to Use the outh2.0 token to access the secured resource using azure data factory
+33. How to Break Out of ForEach Loop on Activity Failure 
+34. How to Format datetime to a 12-hours clock and 24-hours clock
+35. How to generate various formats of year, month, date and Hr using formatdatetime function in ADF
+36. How to dynamically copy only matching files from ADLS to SQL
+-------------------------------------------------------------------------------------------------
+How to copy data from REST API multiple page response using ADF
+How to convert Timezone using Dataflow in ADF
+How to round off decimal number in pipeline expression using ADF
+How to download zip file from API and load into sink path after unzip using ADF
+How to download files from API and load into sink path using Azure Data Factory
+How to split single rows data into multiple rows using Mapping Data Flows in Azure Data Factory
+How to send email alert on pipeline failure using ADF
+Merge multiple rows value into single row using dataflow
+Dynamic sink based on file format in Azure Data Factory Azure Data Factory
+Dynamic column mapping in Azure Data Factory
+How to execute Store Procedure with Output Parameter using ADF
+How to copy multiple tables data using ADF
+Slowly Changing Dimension(SCD)Type2 using Data Flow in ADF
+How to store pipeline execution log in SQL table using ADF
+How to validate file schema before processing in ADF
+How to add new column with source file name using ADF
+How to get count of files in a folder using ADF
+Slowly Changing Dimension(SCD)Type1 using Data Flow in ADF
+How to create running total using Data Flow in ADF
+How to create incremental key using Data Flow in ADF
+How to remove duplicate rows using dataflow in ADF
+How to process fixed length text file using ADF DataFlow|
+How to copy last n days data incrementally from ADLS Gen2
+How to copy latest or last modified file from ADLS Gen2
+How to get source file name dynamically in ADF
+
+------------------------------------------------------------------------------------------------------------------
+
+Scenario-1:copy data from azure blob storage to azure data lake gen2 storage in Azure Data Factory
+Scenario-2: Copy multiple files from Azure blob storage to Azure Data Lake gen2
+Scenario-3: Copy data from http server to Azure Data Lake gen2
+Scenario-4: How to use parameters in Azure Data Factory
+Scenario-5: Execute copy activity when the file becomes available
+Scenario-6: Execute copy activity only if files contents are as expected
+Scenario-7:Slowly changing dimension (SCD) type-1 in Azure Data Factory
+Scenario-8: Copy multiple files from http servers to data lake gen2 storage
+Scenario-9: Copy data from blob storage to azure Sql database
+Scenario-10: Copy multiple files from blob storage to azure Sql database
+Scenario-11:Copy multiple files from blob storage to multiple tables according to a file name
+Scenario-12: How to copy data from on premise to azure
+Scenario-13: How to send email notification in Azure Data Factory
+Scenario-14: How to Azure Key Vault in Azure Data Factory
+Scenario-15:Incrementally load data from Azure SQL Database to Blob storage in ADF using Watermark
+
+
+----------------------------------------------------------------------------------------------------------------
+
+1. Copy the Response of REST API with parameters to Azure SQL DB using Azure Data Factory
+2. Restart Or Re-Run Pipeline from the Point of Failure in Azure Data Factory
+3. Azure Data Factory File Synchronization: Detect and Transfer Missing Files with Filter Activity
+4. Dynamic Folder Creation in Azure Blob Storage based on File Last Modified Date using ADF
+5. Multiple Folder Creation in Azure Blob Storage based on File’s Modified Date using ADF
+6. Step-by-Step Setting Up Self-Hosted Integration Runtimes On-Premise
+7. Sharing Self-Hosted Integration Runtimes Across Multiple Azure Data Factory Instances
+8. Data Transfer using On-Premise SQL Server to ADF with Self-Hosted Integration Runtimes
+9. Data Transfer using On-Premise File System into Azure Blob Storage with Self-Hosted IR
+
+%python pyspark
+
+How do I select a column name with spaces in PySpark?
+How To create data files based on the number of rows in PySpark
+Dynamically processing complex json file in pyspark
+pyspark word count program example
+difference between coalesce and repartition in pyspark
+difference between OrderBy, Sort and sortWithinPartitions Transformations
+How to Handle Bad Data in pyspark dataframe using pyspark schema
+How to handle duplicate column errors in delta table
+Convert pyspark string to date format issue dd-mm-yy old format
+how to take table ddl backup in databricks
+How to implement Multiprocessing in Azure Databricks
+how to handle complex json data file in pyspark
+how to get 53 week number years in pyspark extract 53rd week number in spark
+how to handle double delimiter or multi delimiters in pyspark
+Why we should not use crc32 for Surrogate Keys Generation?
+How to get Individual column wise null records count
+How to add Sequence generated surrogate key as a column in dataframe
+How to Get no of rows from each file in pyspark dataframe
+how to get no of rows at each partition in pyspark dataframe
+how read all files from nested folder in pySpark dataframe
+how to remove duplicate rows in pyspark dataframe
+how to skip first few rows from data file in pyspark
+how to read variable number of columns data in pyspark dataframe
+How to create partition by month and year in pyspark
+How to Find out the Total Winning Count of each team
+How to Find Returning Active Users Using PySpark 
+List of Airlines Operating Flights to all destinations
+How to identify products with increasing yearly sales
+How to hide mobile number digits in Pyspark
+How to Swap Seat Ids in PySpark
+How to add Filename to Data frame in Pyspark
+Cumulative Salary of Employee in Pyspark
+PySpark program to find customers who purchased all products from product table
+How to find the customer who not placed any order in order table in PySpark
+How to handle Multi Delimiters in PySpark
+Count rows in each column where nulls present in Data Frame
+Remove Duplicates in PySpark
+How to get row count from each partition file
+How to partition the data year and month wise in PySpark
+How to handle dynamic no of columns in PySpark
+How to skip garbage lines from PySpark Dataframe
+How to get count of null values from each column of a dataframe
+How to hide all characters except the last four digits of a card number
+How to display most recent updated data 
+How to get the count of data from each file in Databricks
+How to generate surrogate key in a spark dataframe
+How to find out delimiter dynamically for csv file in PySpark
+How to handle multiple delimiter in a csv file
+How to handle complex json data in PySpark
+How to take tables DDL backup
+How to handle duplicate column error in pyspark
+How to restrict no. of records per file in pyspark
+How to get all the DataFrame from a spark session
+How to get the word count in PySpark
+How to Extract Timestamp From Source File name in PySpark
+How to upsert data into delta table using PySpark
+Delta Lake : Slowly Changing Dimension (SCD Type2)
+Dynamically Casting Table Attribute in pyspark
+How to create data frame from api response using pyspark
+----------------------------------
+How many times each job appears within the Dataset
+Find all the customers without a single order
+Find the products whose total sales has increased every year
+Find out the movie details based on given conditions
+Find out total weight of each fruits
+Find out the head count of employee in each job 
+Login at least two consecutive days
+Find out the highest and lowest salaried employee from each dept
+Transform the column value as row 
+List the airlines that operate flights to all the destination
+Find out the duplicate emails
+Get those customers who bought all the products
+How to handle multiple delimiter data 
+Validate data between source and target table
+Find all the strong friendship
+Find the returning active user
+Percentage of immediate orders within the first orders
+Query to find the competitive price
+Calculate each user's average session time
+Find out the total match and win count for each team
+Get the month-over-month percentage change in revenue
+Find the movies with highest average rating from each genre
+Find the room type that are searched most no. of times
+Find the top employees from each shop with highest sales
+calculate the percentage difference of total sales Q1 & Q2 
+Find the house that has won max no of battles for each region
+Find the popularity percentage for each user on Meta
+Find the top three high earner employees from each department
+-------
+
+
+
+
+
+
+

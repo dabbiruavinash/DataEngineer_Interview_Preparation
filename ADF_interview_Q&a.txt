@@ -1,0 +1,395 @@
+****************************ADF different interview company questions ************
+What is Azure Data Factory (ADF)? How does it work?
+What are the key components of ADF?
+What are Linked Services, Datasets, Pipelines, and Triggers in ADF?
+What are Integration Runtimes (IR)? What are its types?
+Difference between Azure Data Factory and SSIS?
+Can ADF process real-time data?
+What are Self-hosted Integration Runtime and Azure-SSIS IR?
+What are Mapping Data Flows in ADF?
+What is the default Retention period of ADF logs?
+What are the different activity types in ADF?
+What is Copy Activity? How does it work?
+What is Data Flow Activity? How is it different from Copy Activity?
+How does ADF handle Incremental Data Loads?
+What is PolyBase in ADF?
+What are Sink and Source transformations in ADF?
+
+Scheduling & Monitoring
+---------------------------
+What are Triggers in ADF? What are the different types?
+Difference between Schedule Trigger, Event Trigger, and Tumbling Window Trigger?
+How do you monitor ADF pipeline runs?
+How to enable logging and debugging in ADF?
+How do you restart failed pipelines automatically?
+
+Real-time Use Cases & Scenario-Based
+--------------------------------------
+You need to copy data from an on-premises SQL Server database to Azure SQL Database. How would you design this data pipeline in ADF?
+How would you process and analyze streaming data from social media platforms to monitor brand sentiment using ADF?
+Describe your approach to integrating and transforming data from disparate sources (e.g., SQL databases, NoSQL stores, and flat files) in real-time to support a unified analytics platform.
+Explain how you would handle late-arriving data in a real-time processing system to ensure data accuracy and consistency.
+How would you design an ADF pipeline to handle transient failures and ensure data integrity during processing?
+Describe your approach to incorporating data quality checks within ADF pipelines to ensure data accuracy.
+How would you implement data partitioning in ADF to optimize performance when dealing with large datasets?
+Explain how to configure retry policies in ADF activities to handle intermittent connectivity issues.
+How would you set up an ADF pipeline to process real-time streaming data from Azure Event Hubs into Azure Synapse Analytics?
+Describe your approach to designing an ADF pipeline that ingests and processes data from various formats (e.g., JSON, XML, CSV) stored in Azure Data Lake Storage.
+How do you load data from SQL Server to Azure Data Lake?
+How do you process JSON files in ADF?
+What happens if a pipeline fails? How do you retry failed activities?
+How to pass parameters between pipelines?
+How do you handle error logging in ADF?
+What is Lookup Activity? When do you use it?
+How do you handle schema drift in ADF?
+What is Pipeline Concurrency? How do you optimize performance?
+How do you transfer large amounts of data efficiently in ADF?
+How do you handle NULL values in ADF?
+
+
+Security & Performance Optimization
+-----------------------------------------
+How do you secure Linked Services in ADF?
+What are Managed Identities in ADF?
+How do you integrate Key Vault with ADF?
+What are Private Endpoints in ADF?
+How do you optimize ADF Pipeline Performance?
+How do you handle Data Skew in ADF?
+What is Data Partitioning in ADF?
+How do you enable Data Compression in ADF?
+
+
+Enterprise Use Cases & Real-World Scenarios
+______________________________________________
+How would you incrementally load data from an on-prem SQL database to Azure Synapse?
+A file arrives late by 2 hours every day. How do you handle this scenario?
+How would you process millions of JSON files in ADF efficiently?
+How do you implement Slowly Changing Dimension (SCD) in ADF?
+You need to merge multiple CSV files before loading them. How do you do it?
+A pipeline failed due to a transient error. How do you auto-recover?
+How do you handle different file formats (CSV, JSON, XML, Parquet) in ADF?
+How do you dynamically generate file names with timestamps in ADF?
+How do you load data from multiple folders in ADLS dynamically?
+What is Data Factory REST API? How can you trigger pipelines using it?
+How do you implement CDC (Change Data Capture) in ADF?
+A pipeline takes 5+ hours to complete. How do you optimize it?
+7. DevOps & CI/CD in ADF
+What is CI/CD in ADF? How do you implement it?
+How do you deploy an ADF pipeline using Azure DevOps?
+What is ARM Template Deployment in ADF?
+How do you rollback changes in ADF?
+How do you manage ADF environments (Dev, Test, Prod)?
+How do you implement parameterization in ADF for reusability?
+How do you track data lineage in ADF?
+What is Git integration in ADF?
+How do you handle pipeline versioning in ADF?
+How do you debug Git Merge Conflicts in ADF?
+
+
+
+expert-level questions (tcs, microsoft, deloitte, goldman sachs)
+____________________________________________________________________
+Advanced ADF (expertise level)
+_______________________________________________
+How does ADF integrate with Azure Synapse Analytics?
+When should you use ADF vs Azure Databricks?
+How do you handle Data Lake security & access controls in ADF?
+Explain Data Flows vs Azure Databricks – which one is better?
+How do you implement event-driven architecture in ADF?
+Explain Mapping Data Flow Debugging Techniques.
+How do you handle nested JSON transformations in ADF?
+How do you monitor data drift and schema changes in ADF?
+What is the role of ADF in Data Mesh & Data Fabric?
+How do you orchestrate Databricks notebooks using ADF?
+
+
+Complex Business Use Cases
+-------------------------------
+How do you migrate SSIS to ADF?
+How do you handle GDPR compliance in ADF?
+What is Azure Purview? How does it integrate with ADF?
+How do you optimize ADF for real-time analytics?
+What are best practices for handling failures in production?
+How do you set up email alerts for failed pipelines?
+What is Metadata-driven ETL in ADF?
+How do you auto-scale Integration Runtime in ADF?
+How do you handle multi-tenant data ingestion in ADF?
+How do you implement dynamic partitioning in Data Flows?
+
+
+🔥 Additional Scenario-Based ADF Interview Questions
+------------------------------------------------------
+Data Integration & Transformation Scenarios
+1.Incremental Data Loading:
+
+You need to copy data from an on-premises SQL Server database to Azure SQL Database. How would you design this data pipeline in ADF? 
+AEGISSOFTTECH.COM
+2.Handling Complex Queries:
+
+How would you build an ADF dataflow pipeline to process complex queries involving multiple transformations and aggregations? 
+LEARN.MICROSOFT.COM
+3.Processing Diverse Data Formats:
+
+Describe your approach to designing an ADF pipeline that ingests and processes data from various formats (e.g., JSON, XML, CSV) stored in Azure Data Lake Storage.
+4.Real-Time Data Processing:
+
+How would you set up an ADF pipeline to process real-time streaming data from Azure Event Hubs into Azure Synapse Analytics?
+5.Data Partitioning Strategy:
+
+Can you explain how to implement data partitioning in ADF to optimize performance when dealing with large datasets?
+Performance Optimization & Troubleshooting
+
+6.Optimizing Copy Activity:
+
+What strategies would you employ to enhance the performance of a Copy Activity in ADF when transferring large volumes of data?
+7.Handling Schema Drift:
+
+How do you manage schema drift in ADF when source data structures change unexpectedly?
+8.Debugging Data Flows:
+
+Describe your approach to debugging and troubleshooting errors in ADF Mapping Data Flows.
+9.Managing Pipeline Failures:
+
+How would you design an ADF pipeline to handle transient failures and ensure data integrity during processing?
+10.Implementing Retry Policies:
+
+Can you explain how to configure retry policies in ADF activities to handle intermittent connectivity issues?
+Security & Compliance
+11Securing Data in Transit:
+
+What measures would you take to ensure data security during transit between on-premises systems and Azure using ADF?
+12.Access Control Management:
+
+How do you implement role-based access control (RBAC) in ADF to restrict access to sensitive data?
+13.Data Masking Techniques:
+
+Describe how you would apply data masking in ADF to protect personally identifiable information (PII) during data processing.
+14.Compliance with Data Regulations:
+
+How does ADF facilitate compliance with data protection regulations such as GDPR?
+15.Integration with Azure Key Vault:
+
+Explain the process of integrating ADF with Azure Key Vault to manage secrets and credentials securely.
+
+
+advanced integration scenarios
+_______________________________________________
+Orchestrating Databricks Notebooks:
+
+1.How would you use ADF to orchestrate Azure Databricks notebooks for complex data transformations?
+
+Implementing Data Quality Checks:
+
+2.Describe your approach to incorporating data quality checks within ADF pipelines to ensure data accuracy.
+
+Hybrid Data Integration:
+
+3.How do you design ADF pipelines to integrate data from both on-premises and cloud sources in a hybrid environment?
+Event-Driven Data Processing:
+
+4.Can you explain how to configure ADF to trigger pipelines based on events, such as the arrival of new files in Azure Blob Storage?
+
+Data Lineage Tracking:
+
+5.How would you implement data lineage tracking in ADF to monitor data flow from source to destination?
+
+
+
+
+----------------------------------------------------
+Azure Data Factory + Logic Apps Integration Questions
+----------------------------------------------------------
+What is Azure Logic Apps, and how does it differ from ADF?
+How can ADF trigger an Azure Logic App?
+How do you pass parameters from an ADF pipeline to a Logic App HTTP request?
+What are the advantages of using Logic Apps for workflow automation instead of ADF?
+Can a Logic App trigger an ADF pipeline execution? If so, how?
+How do you use Logic Apps for email notifications when an ADF pipeline fails?
+What is the difference between Logic Apps, Power Automate, and Azure Functions in automation scenarios?
+How can you use Logic Apps to handle complex retry logic for ADF failures?
+How does Logic Apps integrate with Service Bus and Event Grid to trigger ADF pipelines?
+What are best practices for designing Logic Apps to monitor ADF pipelines?
+2. Azure Data Factory + Event Hubs Integration Questions
+What is Azure Event Hubs, and how does it work in a big data architecture?
+How do you use ADF to read real-time streaming data from Azure Event Hubs?
+How does Event Hubs differ from Kafka in real-time data ingestion?
+What are the steps to ingest Event Hub data into Azure Data Lake using ADF?
+How can ADF process real-time event data using Databricks and Event Hubs?
+What is the role of Capture Storage (Azure Blob) in Event Hubs, and how does ADF use it?
+How do you monitor ADF pipelines that depend on Event Hub triggers?
+What are the key challenges of processing high-throughput data from Event Hubs using ADF?
+How does ADF integrate Event Hubs with Synapse Analytics for streaming analytics?
+How can you optimize performance when pulling Event Hub data using ADF?
+-------------------------------------------------------------
+3. Azure Data Factory + Function Apps Integration Questions
+---------------------------------------------------------------
+What is Azure Functions, and how does it differ from Logic Apps?
+How can ADF trigger an Azure Function using the web activity?
+What are the benefits of using Azure Functions to transform data before loading it via ADF?
+How do you handle custom business logic execution in ADF using Function Apps?
+What are the security considerations when calling an Azure Function from ADF?
+How do you pass input parameters from ADF to an Azure Function dynamically?
+What are durable functions, and how do they improve ADF workflow automation?
+What is the best way to handle error logging and retry mechanisms using Azure Functions in ADF?
+How does ADF integrate Function Apps with Blob Storage and Cosmos DB?
+What are the key performance considerations when designing ADF + Function Apps workflows?
+-----------------------------------------------
+4. Real-Time Scenario-Based Questions
+---------------------------------------------------------
+Scenario: You need to build a solution where files arriving in Azure Blob Storage should trigger an ADF pipeline dynamically. How would you achieve this using Event Grid, Event Hubs, or Logic Apps?
+Scenario: A client wants to ingest IoT sensor data in near real-time using Event Hubs and ADF. How would you design the solution?
+Scenario: Your ADF pipeline needs to call an external API, transform the response, and store the data in Azure SQL DB. How can you use Azure Functions or Logic Apps to achieve this?
+Scenario: You need to automate the retry mechanism for ADF pipeline failures using Logic Apps. How would you design this?
+Scenario: You have an Azure Function that validates data before loading it into SQL, but it's taking longer than expected. How would you optimize this process?
+Scenario: A real-time event processing system is required where ADF pipelines should execute based on new events in Azure Event Hubs. How would you implement this?
+Scenario: ADF pipelines should only run if a pre-check validation function returns true. How can you implement this using Azure Functions?
+Scenario: You need to send notifications via Teams or Email whenever an ADF pipeline succeeds or fails. How would you implement this using Logic Apps?
+Scenario: How would you handle data deduplication when pulling data from Event Hubs into ADF?
+Scenario: You need to schedule an ADF pipeline execution based on a Service Bus event from an external system. How would you achieve this?
+-------------------------------------------------------------------------
+5. Best Practices for ADF + Logic Apps + Event Hubs + Function Apps
+--------------------------------------------------------------------------
+What are best practices for integrating ADF with Event Hubs for high-throughput data processing?
+How can you secure API calls from ADF to Azure Functions?
+What are the cost implications of using ADF with Logic Apps vs. Function Apps?
+How do you monitor and log executions of ADF pipelines triggered via Logic Apps and Function Apps?
+What are the best practices for debugging failures in an ADF pipeline triggered by Event Hubs?
+How do you optimize Logic Apps executions to reduce unnecessary API calls in ADF workflows?
+How do you handle large-scale event-driven architecture using Event Hubs, ADF, and Synapse Analytics?
+What are the differences in concurrency and scalability between Logic Apps and Azure Functions when used with ADF?
+How do you ensure idempotency in Event Hub message processing when using ADF?
+What are the key logging and monitoring strategies for an ADF pipeline orchestrating Event Hubs, Function Apps, and Logic Apps?
+
+------------------------------------------------------------------------------
+
+1. ADF Core Concepts
+What is Azure Data Factory, and how does it work?
+Explain the key components of Azure Data Factory (pipelines, activities, datasets, linked services, triggers).
+What are Linked Services, and how do they differ from Datasets in ADF?
+What is the difference between a Dataset and a Pipeline?
+
+2. Pipeline Orchestration
+How do you orchestrate multiple activities in an ADF pipeline?
+Example: Discuss activity dependencies, success, failure, completion, or skip conditions.
+How do you implement conditional flows within a pipeline?
+Example: Using If Condition, Switch activities, or Filter activity.
+How can you trigger pipelines automatically based on a schedule or event?
+Example: Time-based triggers, storage event triggers, tumbling window triggers.
+Explain the role of parameters in ADF.
+How do you use parameters and variables to pass values between activities or pipelines?
+What are pipeline concurrency and parallelism in ADF?
+How do you control the number of concurrent executions of activities or pipelines?
+
+3. Control Flow Activities
+Explain different control flow activities in ADF.
+Examples: ForEach, Wait, Execute Pipeline, Lookup, Until.
+What is the purpose of a ForEach activity in Azure Data Factory, and how does it work?
+How does the Execute Pipeline activity work, and when would you use it?
+
+4. Data Movement & Transformation
+Explain the role of the Copy Activity in ADF.
+How would you configure data movement between on-premises and cloud sources?
+What are the different types of activities used for data transformation?
+Examples: Mapping Data Flows, Copy Activity, Wrangling Data Flows, custom activities with Azure Batch or Azure Functions.
+What are Data Flows, and how are they different from Copy Activity?
+Explain how Mapping Data Flows allow transformations without Spark programming.
+
+5. Error Handling & Logging
+How do you handle errors in an ADF pipeline?
+Example: Retry policies, setting up alerts, custom logging with Set Variable or Web activity.
+What are Retry Policies, and how can you configure them?
+How can you set retry policies for failed activities and what are common retry intervals and settings?
+How do you monitor pipelines and troubleshoot failed activities in ADF?
+Discuss ADF monitoring tools, activity run history, and log analytics integration.
+
+6. Integration with Other Azure Services
+How does ADF integrate with Azure Blob Storage, SQL Database, Data Lake, Synapse Analytics, etc.?
+Can you explain the process of connecting on-premises data sources to ADF using a Self-hosted Integration Runtime (IR)?
+How would you perform an incremental data load using ADF?
+Example: Using Change Data Capture (CDC), watermarking, or timestamp-based incremental loads.
+How do you use Azure Key Vault in ADF?
+Discuss how to securely store and retrieve secrets (like connection strings or API keys).
+
+7. Performance & Optimization
+How do you optimize ADF pipeline performance?
+Example: Tuning pipeline concurrency, optimizing data movement activities, minimizing data transfer costs.
+What are the best practices for designing efficient pipelines in ADF?
+How do you minimize data transfer costs in ADF?
+
+8. Security & Access Control
+What are the security options available in ADF?
+Discuss how to use Managed Identity, Role-based Access Control (RBAC), and data encryption at rest and in transit.
+How do you secure Linked Services in ADF?
+Example: Using Azure Key Vault for credentials and secrets.
+
+9. Version Control & CI/CD
+How do you implement CI/CD for ADF pipelines?
+Explain the process of integrating ADF with Azure DevOps or GitHub for source control and pipeline deployment.
+What is the role of ARM templates in ADF?
+How are ARM templates used to automate the deployment of ADF resources?
+
+10. Real-time Scenarios
+How would you set up an end-to-end ETL/ELT process using Azure Data Factory?
+Explain a situation where you handled a complex orchestration challenge in ADF.
+How would you implement an incremental load from an on-premises SQL Server to Azure Data Lake?
+
+11. What are the key components of Azure Data Factory?
+Discuss components like Pipelines, Activities, Datasets, Linked Services, and Triggers.
+
+12. Explain the difference between Linked Services and Datasets in ADF.
+Linked Services represent connections to data stores, while Datasets represent the data within those stores.
+
+13. How do you create and orchestrate a pipeline in ADF?
+Explain how to design pipelines using multiple activities, conditional flows, and dependencies.
+
+14. What are control flow activities in ADF?
+Discuss activities like ForEach, If Condition, Wait, Switch, Lookup, and Execute Pipeline.
+
+15. How do you handle errors in ADF pipelines?
+Explain retry policies, setting failure conditions, logging, and custom error handling strategies.
+
+16. What are Triggers in ADF, and how are they used?
+Discuss the different trigger types:
+schedule, tumbling window, and event-based (like blob event triggers).
+
+17. How do you use the Copy Activity in Azure Data Factory?
+Explain its role in moving data from source to sink and configuring source/sink datasets.
+
+18. What is the role of parameters in ADF pipelines, and how do you use them?
+Parameters allow passing values into pipelines and activities for dynamic behavior.
+
+19. Explain the ForEach and Until activities in ADF.
+Discuss how to use ForEach for looping over a collection and Until for repeating a process until a condition is met.
+
+20. How do you use Self-hosted Integration Runtime in ADF?
+Explain its role in connecting to on-premises data sources and the setup process.
+
+21. How do you optimize pipeline performance in ADF?
+Strategies for improving performance include parallelism, data partitioning, optimizing activities, and managing pipeline concurrency.
+
+22. How do you implement incremental data loads in ADF?
+Discuss methods like watermarking, last modified timestamps, and Change Data Capture (CDC).
+
+23. How does ADF integrate with Azure Key Vault for secure credentials management?
+Explain how to store and retrieve secrets like connection strings securely.
+
+24. What are Mapping Data Flows in ADF, and how are they used?
+Discuss their use for visually defining transformations on data at scale using Spark under the hood.
+
+25. How do you manage version control and CI/CD for ADF pipelines?
+Explain integration with GitHub or Azure DevOps, ARM templates, and setting up release pipelines.
+
+26. Explain the difference between a tumbling window trigger and a schedule trigger.
+Tumbling window triggers operate on a fixed window of time, whereas schedule triggers are set to run at specific intervals.
+
+27. What is the purpose of the Lookup activity in ADF?
+Used to retrieve a single value or a dataset from an external source, often used in conditional logic.
+
+28. How can you handle different file formats (e.g., JSON, CSV, Parquet) in ADF?
+Discuss how to create datasets for different formats and configure schema mapping during the data copy.
+
+29. How do you use the Switch activity in ADF?
+Explain how to implement branching logic based on conditions, similar to a case or switch statement.
+
+30. How do you monitor and debug pipelines in ADF?
+Use the ADF monitoring tool, activity run history, log analytics, and alerts to track performance and errors.

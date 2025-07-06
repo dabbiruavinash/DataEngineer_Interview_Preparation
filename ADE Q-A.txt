@@ -1,0 +1,599 @@
+Tiger Analytics 
+
+1. Explain lazy evaluation in PySpark. 
+PySpark delays computation until an action (e.g., collect(), count()) is called. Transformations (e.g., filter(), map()) build a logical plan (DAG) but don't execute immediately, optimizing performance by combining operations.
+
+2. How does caching work in PySpark? 
+df.cache() or df.persist() stores the DataFrame in memory/disk to avoid recomputation.
+Caching is useful for iterative algorithms or repeated access.
+Use df.unpersist() to free memory.
+
+3. What is the difference between wide and narrow transformations? 
+Narrow: Each partition contributes to only one output partition (e.g., filter(), map()). No data shuffling.
+Wide: Input partitions contribute to multiple output partitions (e.g., groupBy(), join()), requiring shuffling.
+
+4. How do you optimize query performance in Azure SQL Database? 
+Create indexes on frequently queried columns.
+Use query store to analyze performance.
+Optimize statistics and partitioning.
+Consider materialized views for complex queries.
+
+5. Describe the process of integrating ADF with Azure Synapse Analytics. 
+Use Synapse Linked Service in ADF.
+Execute Synapse SQL or Spark notebooks via ADF pipelines.
+Leverage Synapse pipelines for orchestration.
+
+6. How do you handle schema evolution in Azure Data Lake? 
+Use Delta Lake to support schema changes (e.g., MERGE, ALTER TABLE).
+Tools like AutoLoader (Databricks) handle schema drift.
+Define schema-on-read in Spark (spark.read.option("mergeSchema", "true")).
+
+7. Write a SQL query to find the nth highest salary in a table. 
+SELECT DISTINCT salary FROM employees ORDER BY salary DESC LIMIT 1 OFFSET (n-1);
+
+8. How do you implement CI/CD pipelines for deploying ADF and Databricks solutions? 
+ADF: Use Git integration and Azure DevOps Pipelines for ARM template deployment.
+Databricks: Deploy notebooks/jars via Databricks CLI or Azure DevOps.
+
+9. Write PySpark code to calculate the total sales for each product category. 
+df.groupBy("product_category").sum("sales").show()
+
+10. Explain how broadcast joins improve performance in PySpark. 
+Broadcast Join: Small tables are sent to all executors, avoiding shuffling.
+Use broadcast() hint:
+df1.join(broadcast(df2), "key")
+
+11. Describe the role of the driver and executor in Spark architecture. 
+Driver: Coordinates jobs, schedules tasks.
+Executor: Runs tasks on worker nodes, stores RDD partitions.
+
+12. How do you manage and monitor ADF pipeline performance? 
+Use ADF Monitoring Hub for pipeline runs.
+Check execution time, data movement metrics.
+Enable logging and Azure Monitor.
+
+13. Write a SQL query to find employees with salaries greater than the department average. 
+SELECT e.name, e.salary, e.department FROM employees e JOIN (
+SELECT department, AVG(salary) as avg_salary FROM employees GROUP BY department) d ON e.department = d.department WHERE e.salary > d.avg_salary;
+
+14. Explain the concept of Delta Lake and its advantages. 
+ACID transactions, time travel, schema enforcement.
+Optimized for big data with compaction and Z-ordering.
+
+15. How do you implement schema drift handling in ADF? 
+Use mapping data flow with schema drift option.
+Parameterize column mappings.
+
+16. Write Python code to check if a number is a palindrome. 
+def is_palindrome(n):
+    return str(n) == str(n)[::-1]
+
+17. What is the significance of Z-ordering in Delta tables? 
+Co-locates related data for faster queries.
+Use OPTIMIZE table ZORDER BY (column).
+
+18. How do you handle incremental data load in Databricks? 
+Spark 3.0+ optimizes queries at runtime:
+Dynamic coalescing of partitions.
+Adjusts join strategies.
+
+19. Explain Adaptive Query Execution (AQE) in Spark. 
+Partition by date, region, etc.
+Avoid too many small files (use Delta Lake).
+
+20. How do you optimize data partitioning in ADLS? 
+Partition by date, region, etc.
+Avoid too many small files (use Delta Lake).
+
+21. Describe the process of creating a data pipeline for real-time analytics. 
+Source: Kafka/Event Hubs.
+Process: Spark Streaming/Databricks.
+Sink: Delta Lake/Cosmos DB.
+
+22. Write PySpark code to perform a left join between two DataFrames. 
+df1.join(df2, "key", "left").show()
+
+23. What are the security best practices for Azure Data Lake? 
+RBAC for access control.
+Encryption (at rest/in transit).
+Firewall rules and private endpoints.
+
+24. Explain the use of Integration Runtime (IR) in ADF. 
+Azure IR: Cloud-based execution.
+Self-hosted IR: For on-prem/VNet data access.
+
+25. How do you design a fault-tolerant architecture for big data processing?
+Redundancy: Multi-region storage.
+Checkpointing: In Spark/Databricks.
+Retry policies: In ADF/Databricks jobs.
+---
+Tredence 
+
+1. Difference between groupByKey and reduceByKey in PySpark. 
+                     groupByKey	                                                                                  reduceByKey
+Groups all values for a key without aggregation.	                               Aggregates values for each key before shuffling.
+High network overhead (sends all values across nodes).	        Optimized: Combines values locally first (map-side reduction).
+Example: rdd.groupByKey()	                                                              Example: rdd.reduceByKey(lambda x, y: x + y)
+
+When to use?
+Use reduceByKey for aggregations (faster).
+Use groupByKey only if you need all values (e.g., custom non-associative operations).
+
+2. How to register a User Defined Function (UDF) in PySpark? 
+from pyspark.sql.functions import udf
+from pyspark.sql.types import IntegerType
+
+# Define the function
+def square(x):
+    return x * x
+
+# Register UDF
+square_udf = udf(square, IntegerType())
+
+# Use in DataFrame
+df.withColumn("squared_value", square_udf(df["value"])).show()
+
+Note: UDFs have overhead (Python-Serialization). Use built-in Spark functions when possible.
+
+3. What are Delta logs, and how to track data versioning in Delta tables? 
+Delta Logs: JSON files in _delta_log directory that track all changes (ACID transactions).
+-- Time Travel (query past versions)
+SELECT * FROM delta_table VERSION AS OF 12;
+-- View history
+DESCRIBE HISTORY delta_table;
+
+4. How do you monitor and troubleshoot ADF pipeline failures? 
+Monitor:
+Use ADF Monitoring Hub → Check "Pipeline Runs" for failures.
+Log Analytics: Query AzureDiagnostics for detailed errors.
+
+Troubleshoot:
+Check Activity Output for error messages.
+Enable Debug Mode for iterative testing.
+Set up Alerts on failure events.
+
+5. What is the use of Delta Lake, and how does it support ACID transactions? 
+What it is: Open-source storage layer on top of Parquet with ACID guarantees.
+
+ACID Support:
+Atomicity: Transactions either fully complete or fail.
+Consistency: Schema enforcement and validation.
+Isolation: Snapshot isolation for concurrent reads/writes.
+Durability: Writes are persisted to disk.
+df.write.format("delta").mode("overwrite").save("/delta_table")
+
+6. Explain the concept of Managed Identity in Azure and its use in data engineering. 
+What it is: Automatically managed Azure AD identity for secure authentication.
+
+Use Cases:
+Grant ADF access to Azure SQL DB without storing credentials.
+Allow Databricks to access ADLS securely.
+
+Types:
+System-assigned (tied to resource lifecycle).
+User-assigned (reusable across resources).
+Example: Enable Managed Identity for ADF → Grant it Storage Blob Contributor role.
+
+7. Write a SQL query to find employees earning more than their manager. 
+SELECT e.employee_id, e.salary, e.manager_id, m.salary AS manager_salary FROM employees e JOIN employees m ON e.manager_id = m.employee_id WHERE e.salary > m.salary;
+
+8. Describe the process of migrating on-premises databases to Azure SQL Database. 
+Assessment: Use Azure Migrate to check compatibility.
+
+Migration:
+Azure DMS (Database Migration Service): Minimal downtime.
+BACPAC Export/Import: For smaller databases.
+Cutover: Redirect applications to the new Azure SQL DB endpoint.
+
+9. Write PySpark code to filter records based on a condition. 
+# Filter rows where 'age' > 30
+filtered_df = df.filter(df["age"] > 30)
+# Alternative syntax
+filtered_df = df.where("salary > 50000")
+
+10. How do you implement error handling in ADF pipelines? 
+Retry Policy: Set in activity properties (max retries, retry interval).
+Failure Paths: Use If Condition activities to route failed pipelines.
+Logging: Log errors to Azure Monitor or Blob Storage.
+
+"activity": {
+  "type": "Copy",
+  "retry": 3,
+  "retryIntervalInSeconds": 30
+}
+
+11. Explain the role of SparkSession in PySpark. 
+Entry point for Spark functionality (replaces SparkContext + SQLContext).
+
+Roles:
+Create DataFrames (spark.read.csv()).
+Execute SQL queries (spark.sql("SELECT * FROM table")).
+Configure Spark settings (spark.conf.set("key", "value")).
+
+from pyspark.sql import SparkSession
+spark = SparkSession.builder.appName("Example").getOrCreate()
+
+12. How do you optimize storage costs in ADLS? 
+Lifecycle Policies: Automatically tier/delete old data (e.g., move to Cool Storage after 30 days).
+Partitioning: Avoid scanning unnecessary data.
+Delta Lake: Small file compaction (OPTIMIZE command).
+
+13. Write a SQL query to find duplicate records in a table. 
+SELECT column1, column2, COUNT(*) FROM table GROUP BY column1, column2 HAVING COUNT(*) > 1;
+
+14. What is the purpose of caching in PySpark, and how is it implemented? 
+
+Purpose: Avoid recomputation of frequently accessed DataFrames.
+Implementation:
+df.cache()  # Memory-only
+df.persist(StorageLevel.DISK_ONLY)  # Disk-only
+Check Cache: df.is_cached
+Release: df.unpersist()
+
+15. Describe the process of integrating ADF with Databricks for ETL workflows. 
+Linked Service: Connect ADF to Databricks (using access token/Managed Identity).
+Notebook Activity: Execute Databricks notebooks in ADF pipelines.
+Parameters: Pass pipeline variables to notebooks.
+
+"activities": [{
+  "type": "DatabricksNotebook",
+  "notebookPath": "/ETL_Process",
+  "baseParameters": {"input_date": "2023-10-01"}
+}]
+
+16. Write Python code to count the frequency of words in a string. 
+from collections import Counter
+text = "hello world hello"
+word_counts = Counter(text.split())
+print(word_counts)  # Output: {'hello': 2, 'world': 1}
+
+17. How do you handle schema evolution in Delta Lake? 
+
+Automatic Handling: Use mergeSchema=True to add new columns.
+
+Explicit Override:
+spark.sql("ALTER TABLE delta_table ADD COLUMN new_col INT")
+Schema Enforcement: Rejects writes with incompatible schemas (disable with .option("mergeSchema", "true")).
+
+18. Explain the difference between streaming and batch processing in Spark. 
+Streaming	                                                                       Batch
+Processes data in real-time (micro-batches).           	Processes bounded datasets at once.
+Uses readStream/writeStream.                                    	Uses read/write.
+Example: Kafka → Spark → Delta Lake.	                Example: CSV → Spark → Parquet.
+
+19. How do you secure data pipelines in Azure? 
+Encryption: SSE (Storage) + TLS (in transit).
+Access Control: RBAC + Managed Identities.
+Private Endpoints: Restrict to VNet.
+Secret Management: Azure Key Vault for credentials.
+
+20. What are the best practices for managing large datasets in Databricks?
+Delta Lake: ACID transactions + compaction.
+Partitioning: By date/region for faster queries.
+Optimize: OPTIMIZE table ZORDER BY (column).
+AutoLoader: Incremental processing for streaming.
+
+---
+
+Deloitte 
+
+1. What is Z-ordering in Spark? 
+What it is: A technique to co-locate related data in the same files (like multi-dimensional clustering).
+Purpose: Optimizes query performance for range scans (e.g., filtering by date and region).
+
+Implementation (Delta Lake):
+OPTIMIZE my_table ZORDER BY (date, customer_id);
+Use Case: Faster queries on columns frequently used in WHERE clauses.
+
+2. Explain the difference between Spark SQL and PySpark DataFrame APIs. 
+
+                          Spark SQL                                                                                         	                 PySpark DataFrame API
+SQL-style syntax (e.g., spark.sql("SELECT * FROM table")).	                                     Programmatic (Python/Scala) syntax (e.g., df.filter()).
+       Better for users familiar with SQL.	                                                                             More flexible for complex transformations.
+Example: spark.sql("SELECT name FROM employees WHERE salary > 50000")	Example: df.select("name").filter(df.salary > 50000)
+
+3. How to implement incremental load in ADF? 
+Watermarking: Track the last loaded record (e.g., last_modified_date).
+Lookup Activity: Fetch the watermark from a control table.
+Filter Source Data: Use WHERE last_modified_date > watermark in the copy activity.
+Update Watermark: After load, store the new watermark.
+
+Example Pipeline:
+Source: SQL query with dynamic watermark (@activity('LookupWatermark').output.firstRow.watermark).
+Sink: Upsert into target using Stored Procedure or Mapping Data Flow.
+
+4. How do you handle large-scale data ingestion into ADLS? 
+Tools:
+Azure Event Hubs (streaming) + Spark Streaming.
+ADF Copy Activity (batch) with parallel partitions.
+
+Optimizations:
+Partitioning: Ingest into partitioned folders (/year=2023/month=10/).
+Delta Lake: Auto-compaction to avoid small files.
+AutoLoader (Databricks): Incremental file processing.
+
+5. Write Python code to split a name column into firstname and lastname. 
+from pyspark.sql.functions import split
+
+df = df.withColumn("firstname", split(df["name"], " ")[0]) \
+       .withColumn("lastname", split(df["name"], " ")[1])
+
+6. What are fact and dimension tables in data modeling? 
+                                Fact Tables	                                                                                                                                              Dimension Tables
+Store measurable events (e.g., sales transactions).	                                                                Store descriptive attributes (e.g., product, customer).
+Contains foreign keys to dimensions and numeric metrics (e.g., quantity, price).	        Contains primary keys and metadata (e.g., product_name, category).
+Example: sales_fact (columns: sale_id, product_id, amount).	                                            Example: product_dim (columns: product_id, product_name).
+
+7. How do you design and implement data pipelines using Azure Data Factory? 
+Source: Define datasets (e.g., SQL DB, Blob Storage).
+Transform: Use Mapping Data Flows (Spark) or Stored Procedures.
+Sink: Load to target (e.g., Synapse, ADLS).
+Orchestrate: Chain activities in pipelines (e.g., copy → transform → load).
+Trigger: Schedule or event-based execution.
+Example: Ingest CSV → Cleanse → Load to Delta Lake.
+
+8. Explain the concept of PolyBase in Azure SQL Data Warehouse. 
+What it is: A feature to query external data (e.g., ADLS) without loading into the warehouse.
+Use Case: Federated queries across SQL DW and ADLS.
+CREATE EXTERNAL TABLE ext_table (
+  col1 INT,
+  col2 STRING
+)
+WITH (
+  LOCATION = '/data/files/',
+  DATA_SOURCE = my_adls);
+
+9. Write a SQL query to calculate the cumulative sum of a column. 
+SELECT 
+    date,
+    sales,
+    SUM(sales) OVER (ORDER BY date ROWS UNBOUNDED PRECEDING) AS cumulative_sum FROM sales_table;
+
+10. How do you manage partitioning in PySpark? 
+Read with Partitioning:
+df = spark.read.parquet("/data/partitioned/year=2023/month=*/")
+
+Repartition:
+df = df.repartition(100, "department")  # 100 partitions or by column
+
+Write Partitioned:
+df.write.partitionBy("department").parquet("/output/")
+
+11. Explain the use of Delta Lake for data versioning. 
+
+Time Travel: Query historical versions.
+SELECT * FROM delta_table VERSION AS OF 5;
+
+Audit Changes:
+DESCRIBE HISTORY delta_table;
+
+Rollback:
+RESTORE TABLE delta_table TO VERSION AS OF 5;
+
+12. How do you monitor and troubleshoot Spark jobs? 
+Spark UI: Track stages/tasks (http://<driver-node>:4040).
+Logs: Check executor/driver logs in YARN/Spark cluster.
+
+Common Issues:
+Skew: Use salting for skewed keys.
+OOM: Increase executor.memory or repartition.
+
+13. Write a SQL query to find employees with the highest salary in each department. 
+WITH RankedSalaries AS (
+    SELECT 
+        name,
+        department,
+        salary,
+        DENSE_RANK() OVER (PARTITION BY department ORDER BY salary DESC) AS rank FROM employees)
+SELECT name, department, salary  FROM RankedSalaries WHERE rank = 1;
+
+14. How do you optimize joins in PySpark for large datasets? 
+Broadcast Join (for small tables):
+df1.join(broadcast(df2), "key")
+Partitioning: Pre-partition both DataFrames on the join key.
+Bucketing: Save tables bucketed by join keys.
+
+15. Describe the process of setting up CI/CD for Azure Data Factory. 
+Git Integration: Link ADF to Azure Repos/GitHub.
+ARM Templates: Export pipelines as JSON.
+Azure DevOps: Deploy using pipelines:
+
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    templateLocation: 'Linked artifact'
+    csmFile: 'arm_template.json'
+
+Validation: Use adf_publish branch for deployment.
+
+16. Write Python code to reverse a string. 
+def reverse_string(s):
+    return s[::-1]
+
+print(reverse_string("hello"))  # "olleh"
+
+17. What are the key features of Databricks notebooks? 
+Multi-language Support: Python, SQL, Scala, R.
+Interactive Visualization: Built-in charts.
+Collaboration: Real-time co-editing.
+Job Scheduling: Run notebooks as jobs.
+DBUtils: Utilities for file system operations.
+
+18. How do you handle late-arriving data in ADF? 
+Watermarking: Track the latest processed timestamp.
+Reconciliation Pipeline: Periodically reprocess data within a time window.
+Delta Lake: Use MERGE to upsert late records.
+
+19. Explain the concept of Data Lakehouse. 
+Definition: Combines Data Lake (storage) + Data Warehouse (query performance).
+Features (Delta Lake):
+ACID transactions.
+Schema enforcement.
+BI and ML support.
+
+20. How do you implement disaster recovery for ADLS?
+Geo-Redundant Storage (GRS): Automatically replicates to a paired region.
+Manual Failover: Initiate via Azure Portal if primary region fails.
+Delta Lake Cloning: Replicate critical tables to a secondary region.
+Let me know if you'd like further elaboration on any topic!
+
+---
+
+Fractal 
+
+1. How do autoscaling clusters work in Databricks? 
+2. What are the types of Integration Runtimes (IR) in ADF? 
+3. Difference between Blob Storage and Azure Data Lake Storage (ADLS). 
+4. How do you integrate Databricks with Azure DevOps for CI/CD pipelines? 
+5. Write a SQL query to convert row-level data to column-level data using pivot. 
+6. How do you ensure data quality and validation in ADLS? 
+7. Explain the use of hierarchical namespaces in ADLS. 
+8. Describe the process of setting up and managing an Azure Synapse Analytics workspace. 
+9. Write PySpark code to calculate the average salary by department. 
+10. How do you implement streaming pipelines in Databricks? 
+11. Explain the purpose of Delta Lake checkpoints. 
+12. How do you handle data encryption in ADLS? 
+13. Write a SQL query to find the top 3 customers by sales. 
+14. How do you optimize Spark jobs for better performance? 
+15. Describe the role of triggers in ADF pipelines. 
+16. Write Python code to find the largest number in a list. 
+17. How do you implement parallel processing in PySpark? 
+18. Explain the concept of lineage in data pipelines. 
+19. How do you manage access control in Azure Data Lake? 
+20. What are the challenges in integrating on-premises data with Azure services?
+----
+
+Infosys 
+
+1. What is the difference between a job cluster and an interactive cluster in Databricks? 
+2. How to copy all tables from one source to the target using metadata-driven pipelines in ADF? 
+3. How do you implement data encryption in Azure SQL Database? 
+4. Write Python code to generate Fibonacci numbers. 
+5. What are the best practices for managing and optimizing storage costs in ADLS? 
+6. How do you implement security measures for data in transit and at rest in Azure? 
+7. Describe the role of triggers and schedules in Azure Data Factory. 
+8. How do you optimize data storage and retrieval in Azure Data Lake Storage? 
+9. Write a SQL query to find employees with no manager assigned. 
+10. How do you implement data deduplication in PySpark? 
+11. Explain the concept of Delta Lake compaction. 
+12. How do you monitor ADF pipeline performance? 
+13. Write a SQL query to find the second-highest salary in a table. 
+14. How do you implement incremental load in Databricks? 
+15. Describe the role of Azure Key Vault in securing sensitive data. 
+16. Write Python code to sort a list of dictionaries by a key. 
+17. How do you handle schema evolution in ADF? 
+18. Explain the concept of shufling in Spark. 
+19. How do you manage metadata in Azure Data Lake? 
+20. What are the key considerations for designing scalable pipelines in ADF? 
+----
+
+EY 
+
+1. How to handle null values in PySpark (drop/fill)? 
+2. What is AQE (Adaptive Query Execution) in Databricks? 
+3. How do you handle error handling in ADF using retry, try-catch blocks, and failover mechanisms? 
+4. How to track file names in the output table while performing copy operations in ADF? 
+5. Write a SQL query to display the cumulative sum of a column. 
+6. Explain the role of Azure Key Vault in securing sensitive data. 
+7. How do you manage and automate ETL workflows using Databricks Workflows? 
+8. Describe the process of setting up disaster recovery for ADLS. 
+9. Explain the difference between narrow and wide transformations in PySpark. 
+10. How do you optimize PySpark jobs for large datasets? 
+11. Write a SQL query to find the average salary for each department. 
+12. What is the role of Delta Lake in modern data architectures? 
+13. How do you monitor and debug ADF pipelines? 
+14. Write PySpark code to perform an inner join between two DataFrames. 
+15. How do you manage schema drift in ADF? 
+16. Describe the concept of fault tolerance in Spark. 
+17. Write Python code to calculate the factorial of a number. 
+18. How do you handle incremental data loads in ADLS? 
+19. What are the security features in Azure Synapse Analytics? 
+20. Explain the concept of partitioning in PySpark. 
+21. How do you implement real-time data processing in Databricks? 
+22. Write a SQL query to find duplicate records in a table. 
+23. How do you integrate Azure Key Vault with ADF pipelines? 
+24. What are the best practices for optimizing storage costs in ADLS? 
+25. How do you implement CI/CD for Azure Synapse Analytics? 
+26. Explain the role of Integration Runtime in ADF. 
+27. How do you secure sensitive data in Azure? 
+28. Describe the process of creating a data pipeline for real-time analytics.
+----
+Persistent 
+
+1. Explain broadcast join in PySpark. 
+2. How to create a rank column using the Window function in PySpark? 
+3. What is the binary copy method in ADF, and when is it used? 
+4. How do you monitor and optimize performance in Azure Synapse? 
+5. Write Python code to identify duplicates in a list and count their occurrences. 
+6. What are the key features of Azure DevOps? 
+7. How do you handle schema drift in ADF? 
+8. Explain the concept of denormalization and when it should be used. 
+----
+Cognizant 
+
+1. Difference between repartition and coalesce in PySpark. 
+2. How to persist and cache data in PySpark? 
+3. How do you use Azure Logic Apps to automate data workflows in SQL databases? 
+4. What are the differences between ADLS Gen1 and Gen2? 
+5. Write a SQL query to find gaps in a sequence of numbers. 
+6. How do you ensure high availability and disaster recovery for Azure SQL databases? 
+7. Explain the role of pipelines in Azure DevOps. 
+8. How do you implement data masking in ADF for sensitive data? 
+----
+TCS 
+
+1. How many jobs, stages, and tasks are created during a Spark job execution? 
+2. What are the activities in ADF (e.g., Copy Activity, Notebook Activity)? 
+3. How do you integrate ADLS with Azure Databricks for data processing? 
+4. Write Python code to check if a string is a palindrome. 
+5. How do you implement data governance in a data lake environment? 
+6. Explain the differences between Azure SQL Database and Azure SQL Managed Instance. 
+7. How do you monitor and troubleshoot issues in Azure SQL Database? 
+8. Describe the process of data ingestion in Azure Synapse.
+----
+
+LatentView 
+
+1. Explain the purpose of SparkContext and SparkSession. 
+2. How to handle incremental load in PySpark when the table lacks a last_modified column? 
+3. How do you use Azure Stream Analytics for real-time data processing? 
+4. What are the security features available in ADLS (e.g., access control lists, role-based 
+access)? 
+5. Write a SQL query to remove duplicate rows from a table. 
+6. How do you manage data lifecycle policies in ADLS? 
+7. What are the key considerations for designing a scalable data architecture in Azure? 
+8. How do you integrate Azure Key Vault with other Azure services? 
+----
+EXL 
+
+1. Difference between TRUNCATE and DELETE in SQL. 
+2. How do you handle big data processing using Azure HDInsight? 
+3. How to implement parallel copies in ADF using partitioning? 
+4. Write Python code to replace vowels in a string with spaces. 
+5. How do you implement data encryption at rest and in transit in ADLS? 
+6. Describe the use of Azure Synapse Analytics and how it integrates with other Azure services. 
+7. How do you implement continuous integration and continuous deployment (CI/CD) in Azure 
+DevOps? 
+8. Explain the role of metadata in data modeling and data architecture. 
+----
+KPMG 
+
+1. How to create and deploy notebooks in Databricks? 
+2. What are the best practices for data archiving and retention in Azure? 
+3. How do you connect ADLS (Azure Data Lake Storage) to Databricks? 
+4. Write a SQL query to list all employees who joined in the last 6 months. 
+5. How do you implement data validation and quality checks in ADF? 
+6. Explain the concept of Azure Data Lake and its integration with SQL-based systems. 
+7. How do you handle exceptions and errors in Python? 
+8. What is the process of normalization, and why is it required? 
+----
+
+PwC 
+
+1. Write a PySpark code to join two DataFrames and perform aggregation. 
+2. What is the difference between wide and narrow transformations in Spark? 
+3. How do you integrate Azure Synapse Analytics with other Azure services? 
+4. How do you monitor and troubleshoot data pipelines in Azure Data Factory? 
+5. Write Python code to generate prime numbers. 
+6. How do you optimize Python code for better performance? 
+7. Explain the concept of list comprehensions and provide an example. 
+8. How do you implement disaster recovery and backup strategies for data in Azure?
