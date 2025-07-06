@@ -1,0 +1,247 @@
+Top 50 Spark Interview Questions You MUST Know:
+
+1️⃣ RDD vs DataFrames
+2️⃣ Challenges faced in Spark
+3️⃣ reduceByKey vs groupByKey
+4️⃣ Persist vs Cache
+5️⃣ Parquet File advantages
+6️⃣ What is a Broadcast Join?
+7️⃣ Coalesce vs Repartition
+8️⃣ Role of Driver in Spark Architecture
+9️⃣ What is Data Skewness? How to fix it?
+10️⃣ Spark Optimization Techniques
+11️⃣ map vs flatMap
+12️⃣ Accumulators & Broadcast Variables
+13️⃣ OutOfMemory (OOM) Issues
+14️⃣ Types of Transformations
+15️⃣ Actions in Spark you’ve used
+16️⃣ Role of Catalyst Optimizer
+17️⃣ What is Checkpointing?
+18️⃣ Cache vs Persist
+19️⃣ What is Lazy Evaluation?
+20️⃣ Convert RDD to DataFrame
+21️⃣ Convert DataFrame to Dataset
+22️⃣ Spark vs MapReduce
+23️⃣ Read CSV without external schema
+24️⃣ Narrow vs Wide Transformation
+25️⃣ spark-submit parameters
+26️⃣ Global Temp View vs Temp View
+27️⃣ Add new calculated columns to a DataFrame
+28️⃣ Avro vs ORC
+29️⃣ Types of Joins in Spark
+30️⃣ Semi Join vs Anti Join
+31️⃣ Order By vs Sort By vs Cluster By
+32️⃣ DataFrame vs Dataset
+33️⃣ Join Strategies in Spark
+34️⃣ Cluster Mode vs Client Mode
+35️⃣ Parameters used in spark-submit
+36️⃣ Add new column in Spark
+37️⃣ Drop a column in Spark
+38️⃣ map vs flatMap
+39️⃣ What is Skewed Partitioning?
+40️⃣ DAG & Lineage in Spark
+41️⃣ RDD vs DataFrame (Yes, again!)
+42️⃣ Where to find Spark Application Logs
+43️⃣ reduceByKey vs groupByKey (Revisited!)
+44️⃣ What is Spark Optimization?
+45️⃣ Shared Variables in Spark
+46️⃣ Broadcast Variable explained
+47️⃣ Why Spark over Hive?
+48️⃣ What is Cache?
+49️⃣ Steps to Read a File in Spark
+50️⃣ How to handle & optimize a 10GB file in Spark?
+
+
+Q. How do you optimize Spark code?
+Q. How to configure a cluster in Databricks?
+Q. What is RDD, DataFrame, and Spark DataFrame?
+Q. Toggle in Spark: What is it, and how do you use it?
+Q. What kind of optimization have you done in Spark?
+Q. Infer schema=true: What does it do?
+Q. Managed and unmanaged tables: What's thedifference?
+Q. How good are you in PySpark?
+Q. Broadcast join and accumulator: What are they?
+OutOfMemory (OOM) exception: What causes it, and how to prevent it?
+Q. Partition and coalesce in PySpark.
+Q. Coalesce and repartition in Spark.
+Q. How do you optimize Spark code?
+Q. What are UDFs in PySpark, and how do they impact performance?
+Q. How is data distributed in Synapse?
+Q. What is the difference between hash and round robin distribution? What is a clustered and nonclustered index?
+Q. How do you create and use external tables in Synapse?
+Q. What’s the benefit of Synapse over normal RDBMS?
+Q. How have you made the pipeline full load and delta load?
+Q. How will you migrate everything like tables, stored procedures, views from one database to another?
+Q. How to move data from onpremises data to Azure Synapse?
+Q. How many types of triggers are present in ADF?
+Q. What kind of data can be stored in a storage account?
+Q. What is the difference between control flow and data flow in ADF?
+Q. What is switch activity in ADF?
+Q. What is managed identity?
+Q. How will you connect to Oracle database without using Integration Runtime?
+Q. Have you used any monitoring services in ADF?
+Q. How can you pass a parameter from Data Factory?
+Q. How can you clear the state in the code during a run?
+Q. How can you save your output and avoid reprocessing in Spark?
+Q. How will you handle delta load in Databricks?
+Q. What is a delta table?
+Q. What Spark optimization techniques have you applied?
+Q. What cluster size have you worked with?
+➤ What is Lazy Evaluation in Spark?
+➤ How do you add a new column in Spark?
+➤ What is a Broadcast Join?
+➤ What is the role of Catalyst Optimizer?
+➤ What are Accumulators and Broadcast Variables?
+➤ What makes Spark better than MapReduce?
+➤ What is Checkpointing in Spark?
+➤ How do you convert an RDD to a DataFrame?
+➤ How would you handle a 10GB file in Spark and optimize it?
+➤ What is the difference between Persist and Cache?
+➤ What is Data Skewness? How do you handle it?
+➤ What is an Out of Memory (OOM) issue, and how do you deal with it?
+➤ What are Shared Variables in Spark?
+➤ How can you read a CSV file without using an external schema?
+➤ What is Cache in Spark?
+➤ Difference between map and flatMap in Spark.
+➤ How can you add two new columns to a DataFrame with calculated values?
+➤ What is the advantage of a Parquet file?
+➤ What is a Broadcast Variable?
+➤ What are Transformations in Spark? What are their types?
+➤ What are the different parameters that can be passed while using spark-submit?
+➤ How do you drop a column in Spark?
+➤ What happens in Cluster Deployment mode and Client Deployment mode?
+➤ What is the difference between Order By, Sort By, and Cluster By?
+➤ What is the difference between Coalesce and Repartition?
+➤ What are the parameters you have used in spark-submit?
+➤ What are the roles and responsibilities of the Driver in Spark architecture?
+➤ What are the different types of joins in Spark?
+➤ What are the challenges you face in Spark?
+➤ What is the difference between Narrow Transformations and Wide Transformations?
+➤ Difference between DataFrame & Dataset in Spark.
+➤ What is a Skew Partition?
+➤ What are the optimization techniques used in Spark?
+➤ How do you convert a DataFrame to a Dataset?
+➤ Can you explain Anti Join and Semi Join?
+➤ Where can you find Spark application logs?
+➤ Why Spark instead of Hive?
+➤ What is DAG and Lineage in Spark?
+➤ What is Spark Optimization?
+➤ What are the Join Strategies in Spark?
+➤ Avro vs ORC – which one do you prefer?
+➤ What are some Actions in Spark that you have used?
+➤ What are the parameters you have used in spark-submit?
+➤ What is the difference between RDD & DataFrame?
+➤ What is a Broadcast Variable?
+➤ What is the difference between Cache and Persist?
+➤ What is an Out of Memory (OOM) issue, and how do you deal with it?
+➤ What are the optimization techniques used in Spark?
+➤ What is a Broadcast Join?
+
+𝐓𝐨𝐩 𝟒𝟓 𝐀𝐝𝐯𝐚𝐧𝐜𝐞𝐝 𝐒𝐩𝐚𝐫𝐤 𝐈𝐧𝐭𝐞𝐫𝐯𝐢𝐞𝐰 𝐐𝐮𝐞𝐬𝐭𝐢𝐨𝐧𝐬 𝐟𝐨𝐫 𝐃𝐚𝐭𝐚 𝐄𝐧𝐠𝐢𝐧𝐞𝐞𝐫𝐬
+.
+.
+1.     What is the difference between transformation and action in Spark with examples?
+2.     What are narrow vs wide transformations in Spark?
+3.     How do you optimize transformations for better performance?
+4.     How does Spark handle lazy evaluation in real-time scenarios?
+5.     What are some commonly used transformations and actions in your projects?
+6.     How does Spark handle fault tolerance internally?
+7.     What is the role of an executor in Spark architecture?
+8.     What does the driver do during job execution?
+9.     What are tasks, stages, and jobs in Spark?
+10.  How does Spark decide how many tasks to run?
+11.  What is shuffle in Spark and when does it happen?
+12.  How do you control the number of partitions after a transformation?
+13.  What is the default number of shuffle partitions and how do you tune it?
+14.  How do you repartition data by a specific column?
+15.  What is skewed data? How do you deal with it?
+16.  What is Catalyst optimizer and how does it work?
+17.  What is the Tungsten engine in Spark and how does it improve performance?
+18.  What is predicate pushdown?
+19.  What is column pruning in Spark SQL?
+20.  How do you inspect the physical plan of a DataFrame or SQL query?
+21.  How do you read and write Parquet files in Spark?
+22.  How do you handle schema evolution in Parquet files?
+23.  What’s the difference between Avro, ORC, and Parquet formats?
+24.  What are the advantages of Parquet over CSV in Spark jobs?
+25.  How can you write partitioned Parquet data to S3?
+26.  What are broadcast joins and when do you use them?
+27.  How do you avoid shuffle during join operations?
+28.  What is the use of .coalesce() before writing files?
+29.  How do you handle out-of-memory issues in Spark?
+30.  How do you tune the number of executors and cores in a job?
+31.  How do you handle null or missing values in Spark DataFrames?
+32.  How do you filter out bad records while reading a corrupt file?
+33.  How do you union two DataFrames with different schemas?
+34.  What’s the difference between dropDuplicates and distinct in Spark?
+35.  How do you pivot and unpivot data in Spark?
+36.  How do you use window functions in Spark SQL or DataFrames?
+37.  How do you implement SCD Type 2 using Spark?
+38.  What are accumulators and when would you use them?
+39.  What is a broadcast variable and how is it different from an accumulator?
+40.  What is a custom partitioner and when do you need one?
+41.  How do you monitor Spark applications during execution?
+42.  Where can you find Spark job logs in a cluster?
+43.  How do you use .explain(true) to debug a query?
+44.  How do you measure the execution time of a job?
+45.  What tools do you use to analyze Spark performance?
+
+1. Why Spark processing is faster than MapReduce jobs?
+2. Spark vs Mapreduce
+3. Why Spark was Developed ?
+4. What is spark ?
+5. What is PySpark?
+6. What are the characteristics of PySpark?
+7. Feature of Spark and Advantages & Disadvantages of pyspark ?
+8. What is Spark Driver ?
+9. PySpark Architecture ?
+10. PySpark Modules & Packages:
+11. Spark Components?
+12. What is SparkContext?
+13.What is SparkSession Explained ?
+14. SparkContext vs SparkSession
+15. Repartition() vs Coalesce() ?
+16. Difference between Cache and Persist ?
+17. What is Unpersist ?
+18.What is diffrance between brodcast variable and Accumulator variable ?
+19. What is shuffling in spark ?
+20. difrance between Groupbykey() vs reduceByKey() vs aggregateByKey() vs sortBy() vs sortByKey()
+21. What is RDD ?
+22.How to Create RDD ?
+23. Types of RDD ?
+24.When to use RDDs?
+25.What is RDD Operations Transformations and RDD Actions ?
+26. map vs flatmap vs filter ?
+27.collect vs collectlAslist vs select()
+28.Why DF is faster than RDD?
+29. RDDs vs. Dataframes vs. Datasets ?
+30. Pivot and Unpivot a Spark Data Frame ?
+31. What is Spark Schema ?
+32. Groupby clause ?
+33. What is Spark SQL DataFrame ?
+34.Why DataFrame?
+35. Is PySpark faster than pandas?
+36. What is DAG and lineage graph, RDD lineage?
+37.What is paired RDD?
+38.What is skewness?
+39.How to mitigate skewed data?
+40.Optimization Techniques in spark :
+41. How to read CSV File Using delimiter ‘,’?
+42. What is Star Schema & snowflake Schema Differentiate Star & Snowflake?
+43. What is Data Skewness?
+44. What is catalyst optimizer?
+45. Explain Serialization and Deserialization?
+46. What are PySpark serializers?
+47.Salting Techniques?
+48. Explain MapPartition in Spark?
+49. How to track failed Jobs in Spark?
+50. What is Broadcast Join?
+51. deployment Mode ? Cluster mode and Client Mode
+52. Spark Submit Command?
+53. Orc vs Parquet vs Csv vs Json
+54. Deal with bad data :
+55. Why out of memory issue occure ?
+56. How to Remove Duplicate Rows ?
+57.Create SparkContext & sparkSession
+58.How to Create RDD :
+59.Create (Read) Spark DataFrame from CSV ,Txt ,JSON,XML
